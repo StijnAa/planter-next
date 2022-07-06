@@ -3,7 +3,9 @@ import styled from "styled-components";
 import React from "react";
 
 const StyledLink = styled.a`
-  color: black;
+  color: ${(props) => {
+    return props.color || "black";
+  }};
   &:hover {
     color: blue;
   }
@@ -15,6 +17,7 @@ function Link(props) {
 
   return (
     <StyledLink
+      {...props}
       {...linkProps}
       ref={ref}
       href={props.href}

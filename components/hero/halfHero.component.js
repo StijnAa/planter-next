@@ -32,6 +32,7 @@ const TextContainer = styled.section`
     margin: 0;
   }
   p {
+    font-weight: 300;
     margin-top: 0.5rem;
   }
   a {

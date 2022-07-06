@@ -30,7 +30,7 @@ const GlobalStyles = createGlobalStyle`
         color: blue;
         text-decoration: none; 
     }
-    /* button, input[type="submit"], input[type="reset"] {
+    button {
         background: none;
         color: inherit;
         border: none;
@@ -38,7 +38,21 @@ const GlobalStyles = createGlobalStyle`
         font: inherit;
         cursor: pointer;
         outline: inherit;
-} */
+}
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+h3{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
 `;
 
 export default GlobalStyles;

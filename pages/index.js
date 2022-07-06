@@ -8,6 +8,8 @@ import Usps from "../components/usps/usps.component";
 import Hero from "../components/hero/hero.component";
 import BigCard from "../components/card/bigCard.component";
 import HalfHero from "../components/hero/halfHero.component";
+import Footer from "../components/footer/footer.component";
+import Faq from "../components/faq/faq.component";
 
 export default function Home() {
   return (
@@ -39,11 +41,7 @@ export default function Home() {
             src=""
             left
           />
-          <Hero
-            title="Houtsoorten"
-            center
-            small
-          />
+          <Hero title="Houtsoorten" center small />
           <HalfHero
             title="Eikenhout"
             p="Eiken (of eikenhout) is een van de bekendste houtsoorten. In het algemeen is eiken sterk en hard, maar toch redelijk makkelijk te bewerken en af te werken.
@@ -64,8 +62,9 @@ Door de schaarste (en prijs) wordt dit meer en meer vervangen door andere soorte
             buttonText="Stel een plantenbak samen"
             small
           />
-
+          <Faq/>
         </main>
+        <Footer />
       </ThemeProvider>
     </SSRProvider>
   );

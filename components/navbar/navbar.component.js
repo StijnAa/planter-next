@@ -52,7 +52,7 @@ const Navbar = () => {
       </LogoContainer>
       <NavList>
         <NavListItem>
-          <Link href="/editor">Editor</Link>
+          <Link href="/editor" >Editor</Link>
         </NavListItem>
         <NavListItem>
           <Link href="/editor">Lees Meer</Link>

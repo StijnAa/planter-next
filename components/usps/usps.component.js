@@ -34,7 +34,7 @@ const Usps = () => {
   return (
     <UspsContainer>
       <UspsItem>
-        <i className="icofont-star icofont-2x" />
+        <i className="icofont-minus icofont-2x" />
         <span>+500 tevreden klanten</span>
       </UspsItem>
       <UspsItem>
