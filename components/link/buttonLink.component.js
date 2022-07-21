@@ -11,6 +11,7 @@ const StyledButton = styled.a`
   justify-content: center;
   border-radius: 2rem;
   padding:1rem 1.5rem;
+  
   &:hover{
     transform: scale(0.98);
   }

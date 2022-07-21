@@ -38,16 +38,23 @@ const GlobalStyles = createGlobalStyle`
         font: inherit;
         cursor: pointer;
         outline: inherit;
-}
-h2 {
+    }
+    h2 {
+        display: block;
+        font-size: 1.5em;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+    h3{
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+    p {
     display: block;
-    font-size: 1.5em;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-}
-h3{
     margin-block-start: 0;
     margin-block-end: 0;
     margin-inline-start: 0px;

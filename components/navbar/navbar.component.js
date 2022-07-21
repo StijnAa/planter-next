@@ -5,7 +5,7 @@ import Link from "../link/link.component";
 const NavbarContainer = styled.nav`
   display: flex;
   background-color: antiquewhite;
-  height: 80px;
+  height: 100px;
   padding: 0px ${({ theme }) => theme.pagePadding} 0
     ${({ theme }) => theme.pagePadding};
   @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
@@ -32,27 +32,26 @@ const NavListItem = styled.li`
 const LogoContainer = styled.div`
   align-items: center;
   margin: auto 0;
+  a {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 2em;
+  }
 `;
 const LoginContainer = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
 `;
-const Logo = styled.h1`
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 2em;
-  margin: 0;
-`;
 
 const Navbar = () => {
   return (
     <NavbarContainer>
       <LogoContainer>
-        <Logo>planter.</Logo>
+        <Link href="/">planter.</Link>
       </LogoContainer>
       <NavList>
         <NavListItem>
-          <Link href="/editor" >Editor</Link>
+          <Link href="/editor">Editor</Link>
         </NavListItem>
         <NavListItem>
           <Link href="/editor">Lees Meer</Link>
@@ -63,7 +62,7 @@ const Navbar = () => {
       </NavList>
 
       <LoginContainer>
-        <Link href="/editor">
+        <Link href="/shoppingCard">
           <i className="icofont-cart-alt icofont-2x"></i>
         </Link>
       </LoginContainer>

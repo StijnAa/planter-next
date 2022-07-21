@@ -3,6 +3,6 @@ const theme = {
 
   mobile: "787px",
 
-  pagePadding: "250px",
+  pagePadding: "180px",
 };
 export default theme;

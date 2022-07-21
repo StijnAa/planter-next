@@ -17,7 +17,6 @@ const StyledHalfHero = styled.section`
     background-size: cover;
     background-position-x: left;
     background-position-y: bottom;
-    border-radius: inherit;
     order: ${(props) => (props.left ? "3" : "1")};
   }
 `;
@@ -36,7 +35,7 @@ const TextContainer = styled.section`
     margin-top: 0.5rem;
   }
   a {
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
 `;
 

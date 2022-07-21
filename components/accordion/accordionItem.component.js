@@ -17,7 +17,7 @@ const TitleContainer = styled.div`
       display: inline;
     }
     span {
-      margin-left: auto;
+      margin-left: 20px;
     }
 
   }
