@@ -13,6 +13,10 @@ const StyledHero = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
+    align-items: center;
+    height: ${(props) => (props.small ? "200px" : "400px")};
+  }
 `;
 
 const HeroTextContianer = styled.div`
@@ -21,17 +25,24 @@ const HeroTextContianer = styled.div`
   h1 {
     color: white;
     font-size: 3rem;
-    text-shadow:${(props) => props.url? "0px 0px 30px rgba(0, 0, 0, 0.8)" : "none" };
+    text-shadow: ${(props) =>
+      props.url ? "0px 0px 30px rgba(0, 0, 0, 0.8)" : "none"};
     text-align: ${(props) => (props.center ? "center" : "left")};
   }
   a {
-    /* margin-left: ${(props) => (props.center ? "auto" : "0")};
-    margin-right: ${(props) => (props.center ? "auto" : "0")}; */
     margin-top: 1rem;
   }
   @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: ${({ theme }) => theme.mobilePadding};
+    padding-right: ${({ theme }) => theme.mobilePadding};
+    display: flex;
+    flex-direction: column;
+    justify-content: ${(props) => (props.center ? "center" : "space-between")};
+    height: 90%;
+    h1 {
+      text-align: center;
+      font-size: 1.5rem;
+    }
   }
 `;
 

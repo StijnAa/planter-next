@@ -24,8 +24,22 @@ const BigCardContainer = styled.section`
     background-position-x: left;
     background-position-y: bottom;
     border-radius: inherit;
-    order: ${props=> props.left ? "3" : "1"};
-    
+    order: ${(props) => (props.left ? "3" : "1")};
+  }
+  @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: ${({ theme }) => theme.mobilePadding};
+    margin-right: ${({ theme }) => theme.mobilePadding};
+    flex-direction: column;
+    h1 {
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    & > div {
+      width: 100%;
+      order: 1};
+    }
   }
 `;
 const TextContainer = styled.section`
@@ -42,6 +56,22 @@ const TextContainer = styled.section`
   a {
     margin-top: 3rem;
   }
+  @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    order: 2;
+    h2 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    p {
+      margin-top: 0.2rem;
+    }
+    a {
+      margin-top: 1rem;
+    }
+  }
 `;
 const ImageContainer = styled.section``;
 const img = styled.div``;
@@ -55,7 +85,7 @@ const BigCard = (props) => {
         {props.buttonText && <ButtonLink>{props.buttonText}</ButtonLink>}
       </TextContainer>
 
-      <div/>
+      <div />
     </BigCardContainer>
   );
 };

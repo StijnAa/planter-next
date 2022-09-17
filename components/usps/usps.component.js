@@ -20,13 +20,23 @@ const UspsContainer = styled.ul`
 const UspsItem = styled.li`
   display: flex;
   flex-direction: row;
+  text-align: center;
   align-items: center;
   justify-content: center;
   i {
+    font-size: 2rem;
     margin: 0 15px 0 0;
   }
   @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
     flex-direction: column;
+    padding: 0 10px;
+    span {
+      font-size: 0.7rem;
+    }
+    i {
+      font-size: 1.4rem;
+      margin: 0 0 0 0;
+    }
   }
 `;
 
@@ -34,15 +44,15 @@ const Usps = () => {
   return (
     <UspsContainer>
       <UspsItem>
-        <i className="icofont-minus icofont-2x" />
+        <i className="icofont-star " />
         <span>+500 tevreden klanten</span>
       </UspsItem>
       <UspsItem>
-        <i className="icofont-delivery-time icofont-2x" />
+        <i className="icofont-delivery-time " />
         <span>2-3 weken levertijd</span>
       </UspsItem>
       <UspsItem>
-        <i className="icofont-magic icofont-2x" />
+        <i className="icofont-magic " />
         <span>Door jou ontworpen</span>
       </UspsItem>
     </UspsContainer>

@@ -10,10 +10,13 @@ const StyledButton = styled.a`
   align-items: center;
   justify-content: center;
   border-radius: 2rem;
-  padding:1rem 1.5rem;
-  
-  &:hover{
+  padding: 1rem 1.5rem;
+
+  &:hover {
     transform: scale(0.98);
+  }
+  @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
+    font-size: 0.8rem;
   }
 `;
 
