@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import theme from "../../styles/theme";
 
 const UspsContainer = styled.ul`
   background-color: white;
@@ -7,13 +8,21 @@ const UspsContainer = styled.ul`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  padding-left: ${({ theme }) => theme.pagePadding};
-  padding-right: ${({ theme }) => theme.pagePadding};
+  padding-left: ${({ theme }) => theme.padding.desktop};
+  padding-right: ${({ theme }) => theme.padding.desktop};
   padding-top: 20px;
   padding-bottom: 20px;
+  @media only screen and (max-width: ${({ theme }) => theme.small}) {
+    padding-left: ${({ theme }) => theme.padding.small};
+    padding-right: ${({ theme }) => theme.padding.small};
+  }
+  @media only screen and (max-width: ${({ theme }) => theme.tablet}) {
+    padding-left: ${({ theme }) => theme.padding.tablet};
+    padding-right: ${({ theme }) => theme.padding.tablet};
+  }
   @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: ${({ theme }) => theme.padding.mobile};
+    padding-right: ${({ theme }) => theme.padding.mobile};
   }
 `;
 
@@ -26,6 +35,11 @@ const UspsItem = styled.li`
   i {
     font-size: 2rem;
     margin: 0 15px 0 0;
+  }
+  @media only screen and (max-width: ${({ theme }) => theme.tablet}) {
+    span {
+      font-size: 0.8rem;
+    }
   }
   @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
     flex-direction: column;

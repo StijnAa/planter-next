@@ -42,7 +42,7 @@ export default function Home() {
             left
           />
           <Hero title="Houtsoorten" center small />
-          {/*
+
           <HalfHero
             title="Eikenhout"
             p="Eiken (of eikenhout) is een van de bekendste houtsoorten. In het algemeen is eiken sterk en hard, maar toch redelijk makkelijk te bewerken en af te werken.
@@ -50,22 +50,21 @@ export default function Home() {
             Europees eiken: Dit is het traditionele eikenhout, waarvan onder andere de klassieke eiken meubelen en beelden gemaakt zijn. 
             Niet alleen meubels, maar ook deuren, parket, kozijnen en trappen en ook schepen en sluisdeuren werden traditioneel van eikenhout gemaakt. 
             Door de schaarste (en prijs) wordt dit meer en meer vervangen door andere soorten, onder andere meer bestendige houtsoorten als Azobé of Afzelia. "
-            src=""
+            url="./img/demoImg1.jpg"
             left
-            small
           />
           <HalfHero
             title="Bamboe"
             p="Europees eiken: Dit is het traditionele eikenhout, waarvan onder andere de klassieke eiken meubelen en beelden gemaakt zijn. 
             Niet alleen meubels, maar ook deuren, parket, kozijnen en trappen en ook schepen en sluisdeuren werden traditioneel van eikenhout gemaakt. 
             Door de schaarste (en prijs) wordt dit meer en meer vervangen door andere soorten, onder andere meer bestendige houtsoorten als Azobé of Afzelia. "
-            src=""
+            url="./img/demoImg1.jpg"
             buttonText="Stel een plantenbak samen"
-            small
           />
-          <Faq/> */}
+
+          <Faq />
         </main>
-        {/* <Footer /> */}
+        <Footer />
       </ThemeProvider>
     </SSRProvider>
   );

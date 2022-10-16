@@ -3,9 +3,12 @@ import styled from "styled-components";
 import { useState } from "react";
 
 const StyledAccordionItem = styled.div`
-    p{
-        font-weight: 300;
-    }`;
+  p {
+    font-weight: 300;
+    font-size: 0.95rem;
+    margin-top: 10px;
+  }
+`;
 const TitleContainer = styled.div`
   & > button {
     display: flex;
@@ -19,7 +22,11 @@ const TitleContainer = styled.div`
     span {
       margin-left: 20px;
     }
-
+    @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
+      h3 {
+        font-size: 0.9rem;
+      }
+    }
   }
 `;
 

@@ -20,8 +20,8 @@ const StyledHero = styled.section`
 `;
 
 const HeroTextContianer = styled.div`
-  padding-left: ${({ theme }) => theme.pagePadding};
-  padding-right: ${({ theme }) => theme.pagePadding};
+  padding-left: ${({ theme }) => theme.padding.desktop};
+  padding-right: ${({ theme }) => theme.padding.desktop};
   h1 {
     color: white;
     font-size: 3rem;
@@ -32,16 +32,24 @@ const HeroTextContianer = styled.div`
   a {
     margin-top: 1rem;
   }
+  @media only screen and (max-width: ${({ theme }) => theme.small}) {
+    padding-left: ${({ theme }) => theme.padding.small};
+    padding-right: ${({ theme }) => theme.padding.small};
+  }
+  @media only screen and (max-width: ${({ theme }) => theme.tablet}) {
+    padding-left: ${({ theme }) => theme.padding.tablet};
+    padding-right: ${({ theme }) => theme.padding.tablet};
+  }
   @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
-    padding-left: ${({ theme }) => theme.mobilePadding};
-    padding-right: ${({ theme }) => theme.mobilePadding};
+    padding-left: ${({ theme }) => theme.padding.mobile};
+    padding-right: ${({ theme }) => theme.padding.mobile};
     display: flex;
     flex-direction: column;
     justify-content: ${(props) => (props.center ? "center" : "space-between")};
     height: 90%;
     h1 {
       text-align: center;
-      font-size: 1.5rem;
+      font-size: 1.7rem;
     }
   }
 `;
