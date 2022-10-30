@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import AccordionItem from "../accordion/accordionItem.component";
+import theme from "../../styles/theme";
 
 const StyledFaq = styled.div`
-  margin-left: ${({ theme }) => theme.padding.desktop};
-  margin-right: ${({ theme }) => theme.padding.desktop};
+  margin-left: ${theme.padding.desktop};
+  margin-right: ${theme.padding.desktop};
   display: flex;
   flex-direction: row;
   margin-top: 80px;
@@ -20,26 +21,26 @@ const StyledFaq = styled.div`
   li {
     padding: 15px 0;
   }
-  @media only screen and (max-width: ${({ theme }) => theme.small}) {
-    margin-left: ${({ theme }) => theme.padding.small};
-    margin-right: ${({ theme }) => theme.padding.small};
+  @media only screen and (max-width: ${theme.small}) {
+    margin-left: ${theme.padding.small};
+    margin-right: ${theme.padding.small};
     h2 {
       font-size: 2rem;
     }
   }
-  @media only screen and (max-width: ${({ theme }) => theme.tablet}) {
+  @media only screen and (max-width: ${theme.tablet}) {
     flex-direction: column;
     align-items: center;
-    margin-left: ${({ theme }) => theme.padding.tablet};
-    margin-right: ${({ theme }) => theme.padding.tablet};
+    margin-left: ${theme.padding.tablet};
+    margin-right: ${theme.padding.tablet};
     h2 {
       font-size: 1.7rem;
       margin-bottom: 1rem;
     }
   }
-  @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
-    margin-left: ${({ theme }) => theme.padding.mobile};
-    margin-right: ${({ theme }) => theme.padding.mobile};
+  @media only screen and (max-width: ${theme.mobile}) {
+    margin-left: ${theme.padding.mobile};
+    margin-right: ${theme.padding.mobile};
   }
 `;
 

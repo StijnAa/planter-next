@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useState } from "react";
+import theme from "../../styles/theme";
 
 const StyledAccordionItem = styled.div`
   p {
@@ -22,7 +23,7 @@ const TitleContainer = styled.div`
     span {
       margin-left: 20px;
     }
-    @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
+    @media only screen and (max-width: ${theme.mobile}) {
       h3 {
         font-size: 0.9rem;
       }

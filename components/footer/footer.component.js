@@ -1,35 +1,37 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "../link/link.component";
+import theme from "../../styles/theme";
 
 const StyledFooter = styled.footer`
-  background-color: #1f1d1d;
-  padding-left: ${({ theme }) => theme.padding.desktop};
-  padding-right: ${({ theme }) => theme.padding.desktop};
+  background-color: ${theme.colors.black};
+  padding-left: ${theme.padding.desktop};
+  padding-right: ${theme.padding.desktop};
   display: flex;
   flex-direction: row;
   padding-top: 80px;
   padding-bottom: 80px;
-  color: white;
+  color: ${theme.colors.white};
   a {
+    color: inherit;
     font-weight: 300;
   }
   p {
     margin-top: 10px;
     margin-bottom: 50px;
   }
-  @media only screen and (max-width: ${({ theme }) => theme.small}) {
-    padding-left: ${({ theme }) => theme.padding.small};
-    padding-right: ${({ theme }) => theme.padding.small};
+  @media only screen and (max-width: ${theme.small}) {
+    padding-left: ${theme.padding.small};
+    padding-right: ${theme.padding.small};
   }
-  @media only screen and (max-width: ${({ theme }) => theme.tablet}) {
+  @media only screen and (max-width: ${theme.tablet}) {
     flex-direction: column;
-    padding-left: ${({ theme }) => theme.padding.tablet};
-    padding-right: ${({ theme }) => theme.padding.tablet};
+    padding-left: ${theme.padding.tablet};
+    padding-right: ${theme.padding.tablet};
   }
-  @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
-    padding-left: ${({ theme }) => theme.padding.mobile};
-    padding-right: ${({ theme }) => theme.padding.mobile};
+  @media only screen and (max-width: ${theme.mobile}) {
+    padding-left: ${theme.padding.mobile};
+    padding-right: ${theme.padding.mobile};
   }
 `;
 
@@ -41,7 +43,7 @@ const ListContainer = styled.ul`
     margin: 15px 0;
   }
 
-  @media only screen and (max-width: ${({ theme }) => theme.small}) {
+  @media only screen and (max-width: ${theme.small}) {
     margin-right: 70px;
   }
 `;
@@ -53,7 +55,7 @@ const SocialLinksContainer = styled.ul`
   a {
     margin: 0 0 0 50px;
   }
-  @media only screen and (max-width: ${({ theme }) => theme.tablet}) {
+  @media only screen and (max-width: ${theme.tablet}) {
     margin-left: 0;
     margin-top: 80px;
   }
@@ -64,34 +66,22 @@ const Footer = () => {
     <StyledFooter>
       <ListContainer>
         <p>Planter</p>
-        <Link color="white" href="/">
-          Our Mission
-        </Link>
-        <Link color="white" href="/">
-          Journal
-        </Link>
+        <Link href="/">Our Mission</Link>
+        <Link href="/">Journal</Link>
       </ListContainer>
       <ListContainer>
         <p>___________</p>
-        <Link color="white" href="/">
-          FAQ
-        </Link>
-        <Link color="white" href="/">
-          Terms of Service
-        </Link>
-        <Link color="white" href="/">
-          Privacy Policy
-        </Link>
-        <Link color="white" href="/">
-          Shipping & Returns
-        </Link>
+        <Link href="/">FAQ</Link>
+        <Link href="/">Terms of Service</Link>
+        <Link href="/">Privacy Policy</Link>
+        <Link href="/">Shipping & Returns</Link>
       </ListContainer>
       <SocialLinksContainer>
         <p>Volg ons:</p>
-        <Link color="white" href="www.facebook.com">
+        <Link href="www.facebook.com">
           <i className="icofont-facebook icofont-2x"></i>
         </Link>
-        <Link color="white" href="www.facebook.com">
+        <Link href="www.facebook.com">
           <i className="icofont-instagram icofont-2x"></i>
         </Link>
       </SocialLinksContainer>

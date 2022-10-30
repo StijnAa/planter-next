@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import ButtonLink from "../link/buttonLink.component";
+import Button from "../link/button.component";
+import theme from "../../styles/theme";
 
 const StyledHero = styled.section`
-  background-color: #6a7c5e;
-  background-image: url(${(props) => props.url});
+  background-color: ${theme.colors.main};
+  background-image: url(${(props) => props.src});
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: left;
@@ -13,36 +14,36 @@ const StyledHero = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
+  @media only screen and (max-width: ${theme.mobile}) {
     align-items: center;
     height: ${(props) => (props.small ? "200px" : "400px")};
   }
 `;
 
 const HeroTextContianer = styled.div`
-  padding-left: ${({ theme }) => theme.padding.desktop};
-  padding-right: ${({ theme }) => theme.padding.desktop};
+  padding-left: ${theme.padding.desktop};
+  padding-right: ${theme.padding.desktop};
   h1 {
-    color: white;
+    color: ${theme.colors.white};
     font-size: 3rem;
     text-shadow: ${(props) =>
-      props.url ? "0px 0px 30px rgba(0, 0, 0, 0.8)" : "none"};
+      props.src ? "0px 0px 30px rgba(0, 0, 0, 0.8)" : "none"};
     text-align: ${(props) => (props.center ? "center" : "left")};
   }
   a {
     margin-top: 1rem;
   }
-  @media only screen and (max-width: ${({ theme }) => theme.small}) {
-    padding-left: ${({ theme }) => theme.padding.small};
-    padding-right: ${({ theme }) => theme.padding.small};
+  @media only screen and (max-width: ${theme.small}) {
+    padding-left: ${theme.padding.small};
+    padding-right: ${theme.padding.small};
   }
-  @media only screen and (max-width: ${({ theme }) => theme.tablet}) {
-    padding-left: ${({ theme }) => theme.padding.tablet};
-    padding-right: ${({ theme }) => theme.padding.tablet};
+  @media only screen and (max-width: ${theme.tablet}) {
+    padding-left: ${theme.padding.tablet};
+    padding-right: ${theme.padding.tablet};
   }
-  @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
-    padding-left: ${({ theme }) => theme.padding.mobile};
-    padding-right: ${({ theme }) => theme.padding.mobile};
+  @media only screen and (max-width: ${theme.mobile}) {
+    padding-left: ${theme.padding.mobile};
+    padding-right: ${theme.padding.mobile};
     display: flex;
     flex-direction: column;
     justify-content: ${(props) => (props.center ? "center" : "space-between")};
@@ -59,7 +60,7 @@ const Hero = (props) => {
     <StyledHero {...props}>
       <HeroTextContianer {...props}>
         <h1>{props.title}</h1>
-        {props.buttonText && <ButtonLink>{props.buttonText}</ButtonLink>}
+        {props.buttonText && <Button>{props.buttonText}</Button>}
       </HeroTextContianer>
     </StyledHero>
   );

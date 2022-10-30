@@ -1,38 +1,25 @@
 import React from "react";
 import styled from "styled-components";
-import ButtonLink from "../link/buttonLink.component";
+import Button from "../link/button.component";
+import theme from "../../styles/theme";
+import Image from "next/image";
 
-const StyledHalfHero = styled.section`
+const HalfHeroContainer = styled.section`
   display: grid;
-  background-color: #fff;
+  background-color: ${theme.colors.white};
   grid-template-columns: 1fr 1fr;
-
-  & > div {
-    background-image: url(${(props) => props.url});
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-x: left;
-    background-position-y: bottom;
-    order: ${(props) => (props.left ? "3" : "1")};
-  }
-  @media only screen and (max-width: ${({ theme }) => theme.small}) {
-  }
-  @media only screen and (max-width: ${({ theme }) => theme.tablet}) {
+  @media only screen and (max-width: ${theme.tablet}) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-    & > div {
-      order: 1;
-    }
-  }
-  @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
   }
 `;
-const TextContainer = styled.section`
-  margin: 4rem;
-  margin-left: ${(props) => props.left && props.theme.padding.desktop};
-  margin-right: ${(props) => !props.left && props.theme.padding.desktop};
 
-  order: 2;
+const TextContainer = styled.main`
+  margin: 4rem;
+  margin-left: ${({ imgLeft }) => imgLeft && theme.padding.desktop};
+  margin-right: ${({ imgLeft }) => imgLeft && theme.padding.desktop};
+  order: ${({ imgLeft }) => (imgLeft ? "3" : "1")};
+
   h2 {
     font-size: 2rem;
     margin: 0;
@@ -44,34 +31,47 @@ const TextContainer = styled.section`
   a {
     margin-top: 2rem;
   }
-  @media only screen and (max-width: ${({ theme }) => theme.small}) {
-    margin-left: ${({ theme }) => theme.padding.small};
-    margin-right: ${({ theme }) => theme.padding.small};
+  @media only screen and (max-width: ${theme.small}) {
+    margin-left: ${theme.padding.small};
+    margin-right: ${theme.padding.small};
   }
-  @media only screen and (max-width: ${({ theme }) => theme.tablet}) {
-    margin-left: ${({ theme }) => theme.padding.tablet};
-    margin-right: ${({ theme }) => theme.padding.tablet};
+  @media only screen and (max-width: ${theme.tablet}) {
+    margin-left: ${theme.padding.tablet};
+    margin-right: ${theme.padding.tablet};
+    order: 3;
   }
-  @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
-    margin-left: ${({ theme }) => theme.padding.tablet};
-    margin-right: ${({ theme }) => theme.padding.tablet};
-    text-align: center;
+  @media only screen and (max-width: ${theme.mobile}) {
+    margin-left: ${theme.padding.tablet};
+    margin-right: ${theme.padding.tablet};
     h2 {
       font-size: 1.5rem;
     }
   }
 `;
 
+const ImageContainer = styled.aside`
+  width: 100%;
+  position: relative;
+  order: 2;
+`;
+
 const HalfHero = (props) => {
   return (
-    <StyledHalfHero {...props}>
-      <TextContainer {...props}>
+    <HalfHeroContainer imgLeft={props.imgLeft}>
+      <TextContainer imgLeft={props.imgLeft}>
         <h2>{props.title}</h2>
         <p>{props.p}</p>
-        {props.buttonText && <ButtonLink>{props.buttonText}</ButtonLink>}
+        {props.buttonText && <Button>{props.buttonText}</Button>}
       </TextContainer>
-      <div />
-    </StyledHalfHero>
+      <ImageContainer>
+        <Image
+          src={props.src}
+          alt={props.alt}
+          layout="fill"
+          objectFit="cover"
+        />
+      </ImageContainer>
+    </HalfHeroContainer>
   );
 };
 

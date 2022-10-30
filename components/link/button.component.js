@@ -1,26 +1,28 @@
 import { useLink } from "@react-aria/link";
 import styled from "styled-components";
 import React from "react";
+import theme from "../../styles/theme";
 
-const StyledButton = styled.a`
-  color: white;
-  background-color: #877154;
+const StyledButton = styled.button`
+  color: ${theme.colors.white};
+  background-color: ${theme.colors.second};
   display: inline-flex;
   cursor: pointer;
   align-items: center;
   justify-content: center;
-  border-radius: 2rem;
+  border-radius: 100rem;
   padding: 1rem 1.5rem;
+  text-align: center;
 
   &:hover {
     transform: scale(0.98);
   }
-  @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
+  @media only screen and (max-width: ${theme.mobile}) {
     font-size: 0.8rem;
   }
 `;
 
-function ButtonLink(props) {
+function Button(props) {
   let ref = React.useRef();
   let { linkProps } = useLink(props, ref);
 
@@ -36,4 +38,4 @@ function ButtonLink(props) {
   );
 }
 
-export default ButtonLink;
+export default Button;

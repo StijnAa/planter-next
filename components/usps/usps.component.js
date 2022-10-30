@@ -3,26 +3,26 @@ import styled from "styled-components";
 import theme from "../../styles/theme";
 
 const UspsContainer = styled.ul`
-  background-color: white;
+  background-color: ${theme.colors.white};
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  padding-left: ${({ theme }) => theme.padding.desktop};
-  padding-right: ${({ theme }) => theme.padding.desktop};
+  padding-left: ${theme.padding.desktop};
+  padding-right: ${theme.padding.desktop};
   padding-top: 20px;
   padding-bottom: 20px;
-  @media only screen and (max-width: ${({ theme }) => theme.small}) {
-    padding-left: ${({ theme }) => theme.padding.small};
-    padding-right: ${({ theme }) => theme.padding.small};
+  @media only screen and (max-width: ${theme.small}) {
+    padding-left: ${theme.padding.small};
+    padding-right: ${theme.padding.small};
   }
-  @media only screen and (max-width: ${({ theme }) => theme.tablet}) {
-    padding-left: ${({ theme }) => theme.padding.tablet};
-    padding-right: ${({ theme }) => theme.padding.tablet};
+  @media only screen and (max-width: ${theme.tablet}) {
+    padding-left: ${theme.padding.tablet};
+    padding-right: ${theme.padding.tablet};
   }
-  @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
-    padding-left: ${({ theme }) => theme.padding.mobile};
-    padding-right: ${({ theme }) => theme.padding.mobile};
+  @media only screen and (max-width: ${theme.mobile}) {
+    padding-left: ${theme.padding.mobile};
+    padding-right: ${theme.padding.mobile};
   }
 `;
 
@@ -36,12 +36,12 @@ const UspsItem = styled.li`
     font-size: 2rem;
     margin: 0 15px 0 0;
   }
-  @media only screen and (max-width: ${({ theme }) => theme.tablet}) {
+  @media only screen and (max-width: ${theme.tablet}) {
     span {
       font-size: 0.8rem;
     }
   }
-  @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
+  @media only screen and (max-width: ${theme.mobile}) {
     flex-direction: column;
     padding: 0 10px;
     span {

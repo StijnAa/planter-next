@@ -1,26 +1,27 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import theme from "../../styles/theme";
 import Link from "../link/link.component";
 
 const NavbarContainer = styled.nav`
-  padding-left: ${({ theme }) => theme.padding.desktop};
-  padding-right: ${({ theme }) => theme.padding.desktop};
-  background-color: antiquewhite;
+  padding-left: ${theme.padding.desktop};
+  padding-right: ${theme.padding.desktop};
+  background-color: ${theme.colors.highlight};
   height: 100px;
   display: flex;
   justify-content: center;
-  @media only screen and (max-width: ${({ theme }) => theme.small}) {
-    padding-left: ${({ theme }) => theme.padding.small};
-    padding-right: ${({ theme }) => theme.padding.small};
+  @media only screen and (max-width: ${theme.small}) {
+    padding-left: ${theme.padding.small};
+    padding-right: ${theme.padding.small};
   }
-  @media only screen and (max-width: ${({ theme }) => theme.tablet}) {
-    padding-left: ${({ theme }) => theme.padding.tablet};
-    padding-right: ${({ theme }) => theme.padding.tablet};
+  @media only screen and (max-width: ${theme.tablet}) {
+    padding-left: ${theme.padding.tablet};
+    padding-right: ${theme.padding.tablet};
   }
-  @media only screen and (max-width: ${({ theme }) => theme.mobile}) {
+  @media only screen and (max-width: ${theme.mobile}) {
     height: 60px;
-    padding-left: ${({ theme }) => theme.padding.mobile};
-    padding-right: ${({ theme }) => theme.padding.mobile};
+    padding-left: ${theme.padding.mobile};
+    padding-right: ${theme.padding.mobile};
   }
 `;
 
@@ -31,7 +32,7 @@ const Nav = styled.section`
   i {
     font-size: 2em;
   }
-  @media only screen and (max-width: ${({ theme }) => theme.tablet}) {
+  @media only screen and (max-width: ${theme.tablet}) {
     flex-wrap: wrap;
     width: 315px;
     i {
@@ -47,13 +48,13 @@ const NavList = styled.ul`
   flex-direction: row;
   height: 100%;
   margin: 0 47px 0 auto;
-  @media only screen and (max-width: ${({ theme }) => theme.tablet}) {
+  @media only screen and (max-width: ${theme.tablet}) {
     width: 100%;
     margin: 0;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    background-color: white;
+    background-color: ${theme.colors.white};
     order: 3;
     display: ${(props) => (props.hambugerStateprop ? "flex" : "none")};
     height: auto;
@@ -64,7 +65,7 @@ const NavList = styled.ul`
 
 const NavListItem = styled.li`
   margin-right: 30px;
-  @media only screen and (max-width: ${({ theme }) => theme.tablet}) {
+  @media only screen and (max-width: ${theme.tablet}) {
     padding: 15px 0 15px 0;
     padding: auto;
     width: 100%;
@@ -73,7 +74,7 @@ const NavListItem = styled.li`
   }
 
   &:hover {
-    background-color: antiquewhite;
+    background-color: ${theme.colors.highlight};
   }
 `;
 const LogoContainer = styled.div`
@@ -83,7 +84,7 @@ const LogoContainer = styled.div`
     font-family: "Josefin Sans", sans-serif;
     font-size: 2em;
   }
-  @media only screen and (max-width: ${({ theme }) => theme.tablet}) {
+  @media only screen and (max-width: ${theme.tablet}) {
     margin: auto;
     a {
       font-size: 1.5em;
@@ -99,7 +100,7 @@ const CartContainer = styled.div`
 const HamburgerContainer = styled.button`
   display: none;
 
-  @media only screen and (max-width: ${({ theme }) => theme.tablet}) {
+  @media only screen and (max-width: ${theme.tablet}) {
     display: flex;
     align-items: center;
     height: 100%;

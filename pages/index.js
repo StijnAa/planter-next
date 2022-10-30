@@ -10,6 +10,7 @@ import BigCard from "../components/card/bigCard.component";
 import HalfHero from "../components/hero/halfHero.component";
 import Footer from "../components/footer/footer.component";
 import Faq from "../components/faq/faq.component";
+import PaddingWrapper from "../components/wrappers/padding.wrapper";
 
 export default function Home() {
   return (
@@ -26,23 +27,24 @@ export default function Home() {
           <Hero
             title="Deze lente, 25% korting!"
             buttonText="Stel een plantenbak samen"
-            url="./img/demoImg1.jpg"
+            src="/img/demoImg1.jpg"
           />
           <Usps />
-          <BigCard
-            title="Deze lente, 25% korting!"
-            p="Maark je tuin zomerklaar. U krijgt 25% korting het totaal"
-            buttonText="Stel een plantenbak samen"
-            src=""
-          />
-          <BigCard
-            title="Deze lente, 25% korting!"
-            p="Maark je tuin zomerklaar. U krijgt 25% korting het totaal"
-            src=""
-            left
-          />
+          <PaddingWrapper>
+            <BigCard
+              title="Deze lente, 25% korting!"
+              p="Maark je tuin zomerklaar. U krijgt 25% korting het totaal"
+              buttonText="Stel een plantenbak samen"
+              src="/img/demoImg1.jpg"
+            />
+            <BigCard
+              title="Deze lente, 25% korting!"
+              p="Maark je tuin zomerklaar. U krijgt 25% korting het totaal"
+              imgLeft
+              src="/img/demoImg1.jpg"
+            />
+          </PaddingWrapper>
           <Hero title="Houtsoorten" center small />
-
           <HalfHero
             title="Eikenhout"
             p="Eiken (of eikenhout) is een van de bekendste houtsoorten. In het algemeen is eiken sterk en hard, maar toch redelijk makkelijk te bewerken en af te werken.
@@ -50,18 +52,17 @@ export default function Home() {
             Europees eiken: Dit is het traditionele eikenhout, waarvan onder andere de klassieke eiken meubelen en beelden gemaakt zijn. 
             Niet alleen meubels, maar ook deuren, parket, kozijnen en trappen en ook schepen en sluisdeuren werden traditioneel van eikenhout gemaakt. 
             Door de schaarste (en prijs) wordt dit meer en meer vervangen door andere soorten, onder andere meer bestendige houtsoorten als Azobé of Afzelia. "
-            url="./img/demoImg1.jpg"
-            left
+            src="/img/demoImg1.jpg"
+            imgLeft
           />
           <HalfHero
             title="Bamboe"
             p="Europees eiken: Dit is het traditionele eikenhout, waarvan onder andere de klassieke eiken meubelen en beelden gemaakt zijn. 
             Niet alleen meubels, maar ook deuren, parket, kozijnen en trappen en ook schepen en sluisdeuren werden traditioneel van eikenhout gemaakt. 
             Door de schaarste (en prijs) wordt dit meer en meer vervangen door andere soorten, onder andere meer bestendige houtsoorten als Azobé of Afzelia. "
-            url="./img/demoImg1.jpg"
+            src="/img/demoImg1.jpg"
             buttonText="Stel een plantenbak samen"
           />
-
           <Faq />
         </main>
         <Footer />

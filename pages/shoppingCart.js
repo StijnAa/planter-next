@@ -4,28 +4,28 @@ import theme from "../styles/theme";
 import GlobalStyles from "../styles/global.js";
 import Head from "next/head";
 import { SSRProvider } from "@react-aria/ssr";
-import Usps from "../components/usps/usps.component";
-import Hero from "../components/hero/hero.component";
-import BigCard from "../components/card/bigCard.component";
-import HalfHero from "../components/hero/halfHero.component";
 import Footer from "../components/footer/footer.component";
 import Faq from "../components/faq/faq.component";
-import ShoppingBasket from "../components/shoppingBasket/shoppingBasket.component";
+import ShoppingItem from "../components/shoppingcard/shoppingItem";
+import ShoppingContainer from "../components/shoppingcard/shoppingContainer";
 
-export default function Home() {
+export default function ShopingPage() {
   return (
     <SSRProvider>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Head>
-          <title>testd</title>
+          <title>Planter.nl</title>
         </Head>
         <header>
           <Navbar />
         </header>
         <main>
-          <ShoppingBasket/>
-          <Faq/>
+          <ShoppingContainer>
+            <ShoppingItem />
+            <ShoppingItem />
+          </ShoppingContainer>
+          <Faq />
         </main>
         <Footer />
       </ThemeProvider>

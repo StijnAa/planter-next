@@ -1,4 +1,5 @@
 import { createGlobalStyle, GlobalStyleComponent } from "styled-components";
+import theme from "./theme";
 
 const GlobalStyles = createGlobalStyle`
 
@@ -10,7 +11,7 @@ const GlobalStyles = createGlobalStyle`
     }
     body{
         margin: 0;
-        background-color: #eee;
+        background-color: ${theme.colors.grey};
     }
     img{
         max-width: 100%;

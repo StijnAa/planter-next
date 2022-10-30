@@ -1,13 +1,14 @@
 import { useLink } from "@react-aria/link";
 import styled from "styled-components";
 import React from "react";
+import theme from "../../styles/theme";
 
 const StyledLink = styled.a`
   color: ${(props) => {
-    return props.color || "black";
+    return props.color || theme.colors.black;
   }};
   &:hover {
-    color: blue;
+    color: ${theme.colors.linkHover};
   }
 `;
 
