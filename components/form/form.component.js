@@ -394,7 +394,7 @@ function FormComponent() {
           </main>
         </fieldset>
         <fieldset id="extras" name="extras">
-          <legend htmlFor="extras">Extra's:</legend>
+          <legend htmlFor="extras">Extra&apos;s:</legend>
           <main>
             <input
               type="checkbox"
