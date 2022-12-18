@@ -18,7 +18,7 @@ export default function Home() {
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Head>
-          <title>testd</title>
+          <title>Planter.nl</title>
         </Head>
         <header>
           <Navbar />
@@ -26,7 +26,8 @@ export default function Home() {
         <main>
           <Hero
             title="Deze lente, 25% korting!"
-            buttonText="Stel een plantenbak samen"
+            buttonText="Stel je eigen plantenbak samen"
+            href="/formulier"
             src="/img/demoImg1.jpg"
           />
           <Usps />

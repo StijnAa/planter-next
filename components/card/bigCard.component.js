@@ -49,7 +49,6 @@ const TextContainer = styled.main`
       margin-top: 0.3rem;
     }
     button {
-      margin-top: 1.5rem;
       font-size: 0.8rem;
     }
   }

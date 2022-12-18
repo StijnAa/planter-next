@@ -124,24 +124,15 @@ const Navbar = () => {
         </LogoContainer>
         <NavList hambugerStateprop={hambugerState}>
           <NavListItem>
-            <Link href="/editor">Editor</Link>
+            <Link href="/formulier">Aanvraag doen</Link>
           </NavListItem>
           <NavListItem>
-            <Link href="/editor">Lees Meer</Link>
+            <Link href="/leesmeer">Lees meer</Link>
           </NavListItem>
           <NavListItem>
-            <Link href="/editor">Inspiratie</Link>
-          </NavListItem>
-          <NavListItem>
-            <Link href="/editor">Inspiratie</Link>
+            <Link href="/inspiratie">Inspiratie</Link>
           </NavListItem>
         </NavList>
-
-        <CartContainer>
-          <Link href="/shoppingCart">
-            <i className="icofont-cart-alt"></i>
-          </Link>
-        </CartContainer>
       </Nav>
     </NavbarContainer>
   );

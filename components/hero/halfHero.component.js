@@ -16,7 +16,7 @@ const HalfHeroContainer = styled.section`
 
 const TextContainer = styled.main`
   margin: 4rem;
-  margin-left: ${({ imgLeft }) => imgLeft && theme.padding.desktop};
+  margin-left: ${({ imgLeft }) => !imgLeft && theme.padding.desktop};
   margin-right: ${({ imgLeft }) => imgLeft && theme.padding.desktop};
   order: ${({ imgLeft }) => (imgLeft ? "3" : "1")};
 
@@ -31,9 +31,15 @@ const TextContainer = styled.main`
   a {
     margin-top: 2rem;
   }
+  button {
+    margin-top: 1.5rem;
+  }
   @media only screen and (max-width: ${theme.small}) {
     margin-left: ${theme.padding.small};
     margin-right: ${theme.padding.small};
+    button {
+      font-size: 0.8rem;
+    }
   }
   @media only screen and (max-width: ${theme.tablet}) {
     margin-left: ${theme.padding.tablet};
@@ -63,14 +69,16 @@ const HalfHero = (props) => {
         <p>{props.p}</p>
         {props.buttonText && <Button>{props.buttonText}</Button>}
       </TextContainer>
-      <ImageContainer>
-        <Image
-          src={props.src}
-          alt={props.alt}
-          layout="fill"
-          objectFit="cover"
-        />
-      </ImageContainer>
+      {props.src && (
+        <ImageContainer>
+          <Image
+            src={props.src}
+            alt={props.alt}
+            layout="fill"
+            objectFit="cover"
+          />
+        </ImageContainer>
+      )}
     </HalfHeroContainer>
   );
 };

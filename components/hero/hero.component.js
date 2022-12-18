@@ -60,7 +60,9 @@ const Hero = (props) => {
     <StyledHero {...props}>
       <HeroTextContianer {...props}>
         <h1>{props.title}</h1>
-        {props.buttonText && <Button>{props.buttonText}</Button>}
+        {props.buttonText && (
+          <Button href={props.href}>{props.buttonText}</Button>
+        )}
       </HeroTextContianer>
     </StyledHero>
   );
