@@ -20,7 +20,7 @@ const ContactApi = async (req, res) => {
         console.log(error);
         reject(error);
         res
-          .status(500)
+          .status(501)
           .json({ msg: "connection could not bee made", error: err });
       } else {
         console.log("Server is ready to take our messages");
@@ -52,7 +52,7 @@ const ContactApi = async (req, res) => {
       if (err) {
         console.error(err);
         reject(err);
-        res.status(500).json({ msg: "mail could not be send", error: err });
+        res.status(502).json({ msg: "mail could not be send", error: err });
       } else {
         console.log(info);
         resolve(info);
