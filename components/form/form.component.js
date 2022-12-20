@@ -115,6 +115,8 @@ function FormComponent() {
     changeFixtureDisplay(e.target.value);
   };
 
+  let loadingRef = React.useRef();
+
   const changeFixtureDisplay = (woodName) => {
     switch (woodName) {
       case "bamboo":
@@ -148,6 +150,7 @@ function FormComponent() {
 
   const handleSubmit = async (e) => {
     setLoading(true);
+    loadingRef.current.scrollIntoView({ behavior: "smooth" });
     e.preventDefault();
     console.log("Sending");
     let data = {
@@ -374,7 +377,7 @@ function FormComponent() {
       <Button type="submit">Verstuur</Button>
     </FormContainer>
   ) : (
-    <Loading />
+    <Loading ref={loadingRef} />
   );
 }
 
