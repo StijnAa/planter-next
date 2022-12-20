@@ -1,6 +1,6 @@
 {
   "functions": {
-    "pages/api/contact.js": {
+    "api/contact.js": {
       "memory": 3008,
       "maxDuration": 60
     }
