@@ -7,7 +7,7 @@ const ContactApi = async (req, res) => {
     host: "smtp.strato.com",
     auth: {
       user: "planter@stijnaa.nl",
-      pass: process.env.password,
+      pass: process.env.PASSWORD,
     },
     secure: true,
     rateDelta: 1000,
