@@ -1,7 +1,7 @@
-const ContactApi = async (req, res) => {
-  require("dotenv").config();
-  let nodemailer = require("nodemailer");
+require("dotenv").config();
+let nodemailer = require("nodemailer");
 
+const ContactApi = async (req, res) => {
   const transporter = nodemailer.createTransport({
     port: 465,
     host: "smtp.strato.com",
