@@ -21,7 +21,7 @@ const ContactApi = async (req, res) => {
         reject(error);
         res
           .status(501)
-          .json({ msg: "connection could not bee made", error: err });
+          .json({ msg: "connection could not bee made", error: error });
       } else {
         console.log("Server is ready to take our messages");
         resolve(success);
