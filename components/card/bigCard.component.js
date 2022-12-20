@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../link/button.component";
+import ButtonLink from "../link/buttonLink.component";
 import Image from "next/image";
 import theme from "../../styles/theme";
+import Router from "next/router";
 
 const BigCardContainer = styled.div`
   overflow: hidden;
@@ -28,28 +29,17 @@ const TextContainer = styled.main`
   padding: 3rem;
   justify-items: stretch;
   order: ${({ imgLeft }) => (imgLeft ? "3" : "1")};
-  h2 {
-    font-size: 2rem;
-  }
-  p {
-    font-weight: 300;
+  & > p {
     margin-top: 1rem;
   }
-  button {
-    margin-top: 1.5rem;
+  & > a {
+    margin-top: 2rem;
   }
   @media only screen and (max-width: ${theme.small}) {
     margin: ${({ buttonText }) => (buttonText ? "2rem 0" : "5rem 0")};
-
     padding: 2rem;
-    h2 {
-      font-size: 1.5rem;
-    }
-    p {
-      margin-top: 0.3rem;
-    }
-    button {
-      font-size: 0.8rem;
+    & > p {
+      margin-top: 1rem;
     }
   }
   @media only screen and (max-width: ${theme.tablet}) {
@@ -57,15 +47,9 @@ const TextContainer = styled.main`
     order: 3;
     width: 100%;
     text-align: center;
-    h2 {
-      font-size: 1.5rem;
-    }
   }
   @media only screen and (max-width: ${theme.mobile}) {
     margin: ${({ buttonText }) => (buttonText ? "0" : "2rem 0")};
-    h2 {
-      font-size: 1.2rem;
-    }
   }
 `;
 const ImageContainer = styled.a`
@@ -78,11 +62,13 @@ const BigCard = (props) => {
   return (
     <BigCardContainer imgLeft={props.imgLeft} buttonText={props.buttonText}>
       <TextContainer imgLeft={props.imgLeft} buttonText={props.buttonText}>
-        <h2>{props.title}</h2>
+        <h3>{props.title}</h3>
         <p>{props.p}</p>
-        {props.buttonText && <Button>{props.buttonText}</Button>}
+        {props.buttonText && (
+          <ButtonLink href={props.href}>{props.buttonText}</ButtonLink>
+        )}
       </TextContainer>
-      <ImageContainer href={props.href}>
+      <ImageContainer>
         <Image
           src={props.src}
           alt={props.alt}

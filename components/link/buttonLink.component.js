@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import React from "react";
 import theme from "../../styles/theme";
+import Link from "next/link";
 
-const StyledButton = styled.p`
+const StyledButton = styled.a`
   color: ${theme.colors.white};
   background-color: ${theme.colors.second};
   display: inline-flex;
@@ -20,12 +21,12 @@ const StyledButton = styled.p`
   }
 `;
 
-function Button(props) {
+function ButtonLink(props) {
   return (
-    <button {...props}>
+    <Link href={props.href}>
       <StyledButton>{props.children}</StyledButton>
-    </button>
+    </Link>
   );
 }
 
-export default Button;
+export default ButtonLink;

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Link from "../link/link.component";
+import TextLink from "../link/textLink.component";
 import theme from "../../styles/theme";
 
 const StyledFooter = styled.footer`
@@ -66,24 +66,24 @@ const Footer = () => {
     <StyledFooter>
       <ListContainer>
         <p>Planter</p>
-        <Link href="/">Our Mission</Link>
-        <Link href="/">Journal</Link>
+        <TextLink href="/">Our Mission</TextLink>
+        <TextLink href="/">Journal</TextLink>
       </ListContainer>
       <ListContainer>
         <p>___________</p>
-        <Link href="/">FAQ</Link>
-        <Link href="/">Terms of Service</Link>
-        <Link href="/">Privacy Policy</Link>
-        <Link href="/">Shipping & Returns</Link>
+        <TextLink href="/">FAQ</TextLink>
+        <TextLink href="/">Terms of Service</TextLink>
+        <TextLink href="/">Privacy Policy</TextLink>
+        <TextLink href="/">Shipping & Returns</TextLink>
       </ListContainer>
       <SocialLinksContainer>
         <p>Volg ons:</p>
-        <Link href="www.facebook.com">
+        <TextLink href="www.facebook.com">
           <i className="icofont-facebook icofont-2x"></i>
-        </Link>
-        <Link href="www.facebook.com">
+        </TextLink>
+        <TextLink href="www.facebook.com">
           <i className="icofont-instagram icofont-2x"></i>
-        </Link>
+        </TextLink>
       </SocialLinksContainer>
     </StyledFooter>
   );

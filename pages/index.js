@@ -36,6 +36,7 @@ export default function Home() {
               title="Deze lente, 25% korting!"
               p="Maark je tuin zomerklaar. U krijgt 25% korting het totaal"
               buttonText="Stel een plantenbak samen"
+              href="/formulier"
               src="/img/demoImg1.jpg"
             />
             <BigCard
@@ -63,6 +64,7 @@ export default function Home() {
             Door de schaarste (en prijs) wordt dit meer en meer vervangen door andere soorten, onder andere meer bestendige houtsoorten als Azobé of Afzelia. "
             src="/img/demoImg1.jpg"
             buttonText="Stel een plantenbak samen"
+            href="/formulier"
           />
           <Faq />
         </main>

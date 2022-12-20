@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../link/button.component";
+import ButtonLink from "../link/buttonLink.component";
 import theme from "../../styles/theme";
 import Image from "next/image";
+import Router from "next/router";
 
 const HalfHeroContainer = styled.section`
   display: grid;
@@ -21,7 +22,6 @@ const TextContainer = styled.main`
   order: ${({ imgLeft }) => (imgLeft ? "3" : "1")};
 
   h2 {
-    font-size: 2rem;
     margin: 0;
   }
   p {
@@ -31,15 +31,9 @@ const TextContainer = styled.main`
   a {
     margin-top: 2rem;
   }
-  button {
-    margin-top: 1.5rem;
-  }
   @media only screen and (max-width: ${theme.small}) {
     margin-left: ${theme.padding.small};
     margin-right: ${theme.padding.small};
-    button {
-      font-size: 0.8rem;
-    }
   }
   @media only screen and (max-width: ${theme.tablet}) {
     margin-left: ${theme.padding.tablet};
@@ -49,9 +43,6 @@ const TextContainer = styled.main`
   @media only screen and (max-width: ${theme.mobile}) {
     margin-left: ${theme.padding.tablet};
     margin-right: ${theme.padding.tablet};
-    h2 {
-      font-size: 1.5rem;
-    }
   }
 `;
 
@@ -65,9 +56,11 @@ const HalfHero = (props) => {
   return (
     <HalfHeroContainer imgLeft={props.imgLeft}>
       <TextContainer imgLeft={props.imgLeft}>
-        <h2>{props.title}</h2>
+        <h3>{props.title}</h3>
         <p>{props.p}</p>
-        {props.buttonText && <Button>{props.buttonText}</Button>}
+        {props.buttonText && (
+          <ButtonLink href={props.href}>{props.buttonText}</ButtonLink>
+        )}
       </TextContainer>
       {props.src && (
         <ImageContainer>

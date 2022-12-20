@@ -29,10 +29,11 @@ const ContactApi = async (req, res) => {
     });
   });
 
+  const date = new Date();
   const mailData = {
     from: "planter@stijnaa.nl",
     to: "stijnaa@gmail.com",
-    subject: `Aanvraag van ${req.body.name}`,
+    subject: `Aanvraag van ${req.body.name} om ${date}`,
     html: `<div><p>Name: ${req.body.name}</p>
     <p>Email: ${req.body.email}</p>
     <p>Phone: ${req.body.phone}</p>

@@ -29,12 +29,6 @@ const ShoppingItemContainer = styled.li`
     grid-template-rows: 1fr auto 1fr;
     grid-template-columns: 5fr 1fr;
     gap: 20px;
-    li {
-      font-weight: 300;
-      @media only screen and (max-width: ${theme.tablet}) {
-        font-size: 0.8em;
-      }
-    }
     @media only screen and (max-width: ${theme.small}) {
       padding: 40px;
     }
@@ -52,16 +46,8 @@ const ShoppingItemContainer = styled.li`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    & > h2 {
-      @media only screen and (max-width: ${theme.tablet}) {
-        font-size: 1em;
-      }
-    }
     i {
       line-height: 25px;
-      @media only screen and (max-width: ${theme.tablet}) {
-        font-size: 0.7em;
-      }
     }
   }
 `;

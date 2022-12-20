@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../link/button.component";
+import ButtonLink from "../link/buttonLink.component";
 import theme from "../../styles/theme";
 
 const StyledHero = styled.section`
@@ -25,7 +25,6 @@ const HeroTextContianer = styled.div`
   padding-right: ${theme.padding.desktop};
   h1 {
     color: ${theme.colors.white};
-    font-size: 3rem;
     text-shadow: ${(props) =>
       props.src ? "0px 0px 30px rgba(0, 0, 0, 0.8)" : "none"};
     text-align: ${(props) => (props.center ? "center" : "left")};
@@ -50,7 +49,6 @@ const HeroTextContianer = styled.div`
     height: 90%;
     h1 {
       text-align: center;
-      font-size: 1.7rem;
     }
   }
 `;
@@ -61,7 +59,7 @@ const Hero = (props) => {
       <HeroTextContianer {...props}>
         <h1>{props.title}</h1>
         {props.buttonText && (
-          <Button href={props.href}>{props.buttonText}</Button>
+          <ButtonLink href={props.href}>{props.buttonText}</ButtonLink>
         )}
       </HeroTextContianer>
     </StyledHero>

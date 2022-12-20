@@ -12,7 +12,7 @@ const StyledLink = styled.a`
   }
 `;
 
-function Link(props) {
+function TextLink(props) {
   let ref = React.useRef();
   let { linkProps } = useLink(props, ref);
 
@@ -29,4 +29,4 @@ function Link(props) {
   );
 }
 
-export default Link;
+export default TextLink;

@@ -33,22 +33,15 @@ const UspsItem = styled.li`
   align-items: center;
   justify-content: center;
   i {
-    font-size: 2rem;
     margin: 0 15px 0 0;
   }
-  @media only screen and (max-width: ${theme.tablet}) {
-    span {
-      font-size: 0.8rem;
-    }
+  span {
+    font-weight: 500;
   }
   @media only screen and (max-width: ${theme.mobile}) {
     flex-direction: column;
     padding: 0 10px;
-    span {
-      font-size: 0.7rem;
-    }
     i {
-      font-size: 1.4rem;
       margin: 0 0 0 0;
     }
   }

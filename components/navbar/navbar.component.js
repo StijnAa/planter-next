@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import theme from "../../styles/theme";
-import Link from "../link/link.component";
+import TextLink from "../link/textLink.component";
 
 const NavbarContainer = styled.nav`
   padding-left: ${theme.padding.desktop};
@@ -29,15 +29,9 @@ const Nav = styled.section`
   display: flex;
   width: 100%;
 
-  i {
-    font-size: 2em;
-  }
   @media only screen and (max-width: ${theme.tablet}) {
     flex-wrap: wrap;
     width: 315px;
-    i {
-      font-size: 1.5em;
-    }
     gap: 10px;
   }
 `;
@@ -65,12 +59,21 @@ const NavList = styled.ul`
 
 const NavListItem = styled.li`
   margin-right: 30px;
+  a {
+    font-weight: 500;
+  }
   @media only screen and (max-width: ${theme.tablet}) {
     padding: 15px 0 15px 0;
     padding: auto;
     width: 100%;
     border-radius: 1rem;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    a {
+      font-weight: 500;
+    }
   }
 
   &:hover {
@@ -80,14 +83,25 @@ const NavListItem = styled.li`
 const LogoContainer = styled.div`
   align-items: center;
   margin: auto 0;
-  a {
+  h3 {
+    font-size: 2rem;
+    font-weight: 600;
     font-family: "Josefin Sans", sans-serif;
-    font-size: 2em;
+  }
+  @media only screen and (max-width: ${theme.small}) {
+    h3 {
+      font-size: 1.75rem;
+    }
   }
   @media only screen and (max-width: ${theme.tablet}) {
     margin: auto;
-    a {
-      font-size: 1.5em;
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
+  @media only screen and (max-width: ${theme.mobile}) {
+    h3 {
+      font-size: 1.2rem;
     }
   }
 `;
@@ -105,6 +119,11 @@ const HamburgerContainer = styled.button`
     align-items: center;
     height: 100%;
   }
+  @media only screen and (max-width: ${theme.mobile}) {
+    i {
+      font-size: 1.2rem;
+    }
+  }
 `;
 
 const Navbar = () => {
@@ -120,17 +139,19 @@ const Navbar = () => {
           <i className="icofont-navigation"></i>
         </HamburgerContainer>
         <LogoContainer>
-          <Link href="/">planter.</Link>
+          <TextLink href="/">
+            <h3>planter.</h3>
+          </TextLink>
         </LogoContainer>
         <NavList hambugerStateprop={hambugerState}>
           <NavListItem>
-            <Link href="/formulier">Aanvraag doen</Link>
+            <TextLink href="/formulier">Aanvraag doen</TextLink>
           </NavListItem>
           <NavListItem>
-            <Link href="/leesmeer">Lees meer</Link>
+            <TextLink href="/leesmeer">Lees meer</TextLink>
           </NavListItem>
           <NavListItem>
-            <Link href="/inspiratie">Inspiratie</Link>
+            <TextLink href="/inspiratie">Inspiratie</TextLink>
           </NavListItem>
         </NavList>
       </Nav>

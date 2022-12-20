@@ -25,6 +25,8 @@ export default function formPage() {
             <BigCard
               title="Er is iets mis gegaan."
               p="We hebben je aanvraag nog niet ontvangen. Probeer het nog een keer. Je kunt ook altijd contact op nemen via de mail."
+              buttonText="Terug"
+              href="/formulier"
               src="/img/demoImg1.jpg"
             />
           </PaddingWrapper>

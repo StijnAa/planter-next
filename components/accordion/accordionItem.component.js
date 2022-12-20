@@ -5,8 +5,6 @@ import theme from "../../styles/theme";
 
 const StyledAccordionItem = styled.div`
   p {
-    font-weight: 300;
-    font-size: 0.95rem;
     margin-top: 10px;
   }
 `;
@@ -17,16 +15,12 @@ const TitleContainer = styled.div`
     justify-content: space-between;
     width: 100%;
     text-align: left;
-    h3 {
+    & > h4 {
       display: inline;
+      font-weight: 400;
     }
-    span {
+    & > span {
       margin-left: 20px;
-    }
-    @media only screen and (max-width: ${theme.mobile}) {
-      h3 {
-        font-size: 0.9rem;
-      }
     }
   }
 `;
@@ -42,7 +36,7 @@ const AccordionItem = ({ title, text }) => {
             setIsExpanded(!isExpanded);
           }}
         >
-          <h3>{title}</h3>
+          <h4>{title}</h4>
           <span>{!isExpanded ? "+" : "-"}</span>
         </button>
       </TitleContainer>

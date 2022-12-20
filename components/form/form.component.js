@@ -4,84 +4,44 @@ import theme from "../../styles/theme";
 import Button from "../link/button.component";
 import { useState } from "react";
 import Router from "next/router";
+import Textfield from "./textfield.component";
+import Radiofield from "./radio.component";
+import Dropdown from "./dropdown.component";
+import Loading from "../loading/loading.component";
+import { formHeight, fontBody } from "../../styles/cssHelper";
 
 const FormContainer = styled.form`
   border-radius: 0.8rem;
   background-color: ${theme.colors.white};
   padding: 3rem;
+
   section:not(:last-child) {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
   button {
     margin-left: auto;
     width: 100%;
   }
   margin-bottom: 4rem;
+  margin-left: ${theme.padding.desktop};
+  margin-right: ${theme.padding.desktop};
   @media only screen and (max-width: ${theme.small}) {
-    padding: 2rem;
+    margin-left: ${theme.padding.small};
+    margin-right: ${theme.padding.small};
   }
   @media only screen and (max-width: ${theme.tablet}) {
+    border-radius: 0;
+    margin-left: 0;
+    margin-right: 0;
   }
   @media only screen and (max-width: ${theme.mobile}) {
   }
 `;
-const ContactSection = styled.section`
-  label {
-    display: block;
-    margin: 1rem 0;
-  }
-  input {
-    width: 100%;
-    height: 50px;
-    border-width: 1px;
-    border-color: ${theme.colors.black};
-    border-radius: 0.3rem;
-    border-style: solid;
-    margin-top: 7px;
-    padding: 1rem;
-  }
-  span {
-    font-weight: 300;
-    margin-bottom: 10px;
-  }
-`;
-const PlanterSection = styled.section`
-  label {
-    div {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-  }
 
-  span {
-  }
-  fieldset {
-    display: flex;
-    flex-direction: column;
-    margin: 1rem 0;
-    border-width: 1px;
-    border-color: #1f1d1d;
-    border-radius: 0.3rem;
-    border-style: solid;
-    input {
-      padding: 1rem;
-      height: 50px;
-      width: 22px;
-    }
-    main {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-  }
-`;
 const Unit = styled.span`
+  font-weight: 400;
   align-items: center;
   margin: 0 1rem 0 0.8rem;
-`;
-const Label = styled.span`
-  font-weight: 300;
 `;
 const Dimentions = styled.div`
   display: flex;
@@ -89,19 +49,32 @@ const Dimentions = styled.div`
   gap: 2rem;
   input {
     width: 100%;
-    padding: 1rem;
-    height: 50px;
+    padding: 0 1rem;
     border-width: 1px;
     border-color: ${theme.colors.black};
     border-radius: 0.3rem;
     border-style: solid;
-    margin-top: 7px;
+    ${formHeight}
+    ${fontBody}
+    font-weight: 300;
   }
-  label {
+  & > div {
     width: 100%;
     display: flex;
     flex-direction: column;
     margin: 1rem 0;
+
+    div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    label {
+      font-weight: 400;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+
     @media only screen and (max-width: ${theme.tablet}) {
       margin: 0.5rem 0;
     }
@@ -115,27 +88,6 @@ const Dimentions = styled.div`
   @media only screen and (max-width: ${theme.mobile}) {
   }
 `;
-const HeightContainer = styled.div`
-  label {
-    font-weight: 300;
-    display: block;
-  }
-  select {
-    width: 100%;
-    padding: 0 1rem;
-    height: 50px;
-    border-width: 1px;
-    border-color: ${theme.colors.black};
-    border-radius: 0.3rem;
-    border-style: solid;
-    margin-top: 7px;
-  }
-  option {
-    width: 50%;
-    font-size: inherit;
-    font-weight: inherit;
-  }
-`;
 
 function FormComponent() {
   const [name, setName] = useState("");
@@ -145,12 +97,57 @@ function FormComponent() {
   const [width, setWidth] = useState("");
   const [height, setHeight] = useState("");
   const [wood, setWood] = useState("");
+  const [avFixture, setAvFixture] = useState([
+    { value: "notsure", label: "Ik weet het nog niet" },
+    { value: "clips", label: "Clips" },
+    { value: "rvs", label: "RVS spijkers" },
+    { value: "black", label: "Zwarte spijkers" },
+    { value: "screw", label: "Schroeven" },
+  ]);
   const [fixture, setFixture] = useState("");
   const [waterSystem, setWaterSystem] = useState(false);
   const [lightSystem, setLightSystem] = useState(false);
   const [installment, setInstallment] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const changeWood = (e) => {
+    setWood(e.target.value);
+    changeFixtureDisplay(e.target.value);
+  };
+
+  const changeFixtureDisplay = (woodName) => {
+    switch (woodName) {
+      case "bamboo":
+        setAvFixture([{ value: "clips", label: "Clips" }]);
+        setFixture("");
+        break;
+      case "hard":
+        setAvFixture([{ value: "screw", label: "Schroeven" }]);
+        setFixture("");
+        break;
+      case "douglas":
+        setAvFixture([
+          { value: "notsure", label: "Ik weet het nog niet" },
+          { value: "rvs", label: "RVS spijkers" },
+          { value: "black", label: "Zwarte spijkers" },
+        ]);
+        setFixture("");
+        break;
+      case "notsure":
+        setAvFixture([
+          { value: "notsure", label: "Ik weet het nog niet" },
+          { value: "clips", label: "Clips" },
+          { value: "rvs", label: "RVS spijkers" },
+          { value: "black", label: "Zwarte spijkers" },
+          { value: "screw", label: "Schroeven" },
+        ]);
+        setFixture("");
+        break;
+    }
+  };
 
   const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
     console.log("Sending");
     let data = {
@@ -184,57 +181,50 @@ function FormComponent() {
     });
   };
 
-  return (
+  return !loading ? (
     <FormContainer
       onSubmit={(e) => {
         handleSubmit(e);
       }}
     >
-      <ContactSection>
-        <h2>Contact gegevens</h2>
-        <label htmlFor="name">
-          <span>Name:</span>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            onChange={(e) => {
-              setName(e.target.value);
-            }}
-            value={name}
-          />
-        </label>
-        <label htmlFor="email">
-          <span>Email: (verplicht)</span>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-            value={email}
-            required
-          />
-        </label>
-        <label htmlFor="phone">
-          <span>Telefoonnummer:</span>
-          <input
-            type="number"
-            id="phone"
-            name="phone"
-            onChange={(e) => {
-              setPhone(e.target.value);
-            }}
-            value={phone}
-          />
-        </label>
-      </ContactSection>
-      <PlanterSection>
-        <h2>De plantenbak</h2>
+      <section>
+        <h3>Contact gegevens</h3>
+        <Textfield
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
+          value={name}
+          id="name"
+          label="Naam: (verplicht)"
+          type="text"
+          required
+        />
+        <Textfield
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+          value={email}
+          id="email"
+          label="Email: (verplicht)"
+          type="email"
+          required
+        />
+        <Textfield
+          onChange={(e) => {
+            setPhone(e.target.value);
+          }}
+          value={phone}
+          id="phone"
+          label="Telefoonnummer: (verplicht)"
+          type="number"
+          required
+        />
+      </section>
+      <section>
+        <h3>De plantenbak</h3>
         <Dimentions>
-          <label htmlFor="length">
-            <Label>Lengte:</Label>
+          <div>
+            <label htmlFor="length">Lengte:</label>
             <div>
               <input
                 type="number"
@@ -247,9 +237,9 @@ function FormComponent() {
               />
               <Unit>cm</Unit>
             </div>
-          </label>
-          <label htmlFor="width">
-            <Label>Breedte:</Label>
+          </div>
+          <div>
+            <label htmlFor="width">Breedte:</label>
             <div>
               <input
                 type="number"
@@ -262,140 +252,88 @@ function FormComponent() {
               />
               <Unit>cm</Unit>
             </div>
-          </label>
+          </div>
         </Dimentions>
 
-        <HeightContainer>
-          <label htmlFor="height">Hoogte:</label>
-          <select
-            id="height"
-            onChange={(e) => {
-              setHeight(e.target.value);
-            }}
-            value={height}
-          >
-            <option value="notsure">Ik wil graag advies</option>
-            <option value="default">3 planken</option>
-            <option value="extra">4 planken</option>
-          </select>
-        </HeightContainer>
-        <fieldset id="wood" name="wood">
-          <legend htmlFor="wood">Soort Hout:</legend>
-          <main>
+        <Dropdown
+          id="height"
+          onChange={(e) => {
+            setHeight(e.target.value);
+          }}
+          value={height}
+          label="Hoogte:"
+        >
+          <option value="notsure">Ik wil graag advies</option>
+          <option value="default">3 planken</option>
+          <option value="extra">4 planken</option>
+        </Dropdown>
+        <Radiofield id="wood" label="Soort Hout:">
+          <set>
             <input
               type="radio"
               value="notsure"
+              id="notsure"
               name="wood"
               checked={wood === "notsure"}
-              onChange={(e) => {
-                setWood(e.target.value);
-              }}
+              onChange={(e) => changeWood(e)}
             />
             <label htmlFor="notsure">Ik wil graag advies</label>
-          </main>
-          <main>
+          </set>
+          <set>
             <input
               type="radio"
               value="bamboo"
+              id="bamboo"
               name="wood"
               checked={wood === "bamboo"}
-              onChange={(e) => {
-                setWood(e.target.value);
-              }}
+              onChange={(e) => changeWood(e)}
             />
             <label htmlFor="bamboo">Bamboo</label>
-          </main>
-          <main>
+          </set>
+          <set>
             <input
               type="radio"
-              value="douglass"
+              value="douglas"
+              id="douglas"
               name="wood"
-              checked={wood === "douglass"}
-              onChange={(e) => {
-                setWood(e.target.value);
-              }}
+              checked={wood === "douglas"}
+              onChange={(e) => changeWood(e)}
             />
-            <label htmlFor="douglass">Douglass</label>
-          </main>
-          <main>
+            <label htmlFor="douglas">Douglass</label>
+          </set>
+          <set>
             <input
               type="radio"
               value="hard"
+              id="hard"
               name="wood"
               checked={wood === "hard"}
-              onChange={(e) => {
-                setWood(e.target.value);
-              }}
+              onChange={(e) => changeWood(e)}
             />
             <label htmlFor="hard">Hard hout</label>
-          </main>
-        </fieldset>
-        <fieldset id="fixture" name="fixture">
-          <legend htmlFor="fixture">Manier van bevestigen:</legend>
-          <main>
-            <input
-              type="radio"
-              value="notsure"
-              name="fixture"
-              checked={fixture === "notsure"}
-              onChange={(e) => {
-                setFixture(e.target.value);
-              }}
-            />
-            <label htmlFor="notsure">Weet ik nog niet</label>
-          </main>
-          <main>
-            <input
-              type="radio"
-              value="rvs"
-              name="fixture"
-              checked={fixture === "rvs"}
-              onChange={(e) => {
-                setFixture(e.target.value);
-              }}
-            />
-            <label htmlFor="rvs">RVS spijkers</label>
-          </main>
-          <main>
-            <input
-              type="radio"
-              value="black"
-              name="fixture"
-              checked={fixture === "black"}
-              onChange={(e) => {
-                setFixture(e.target.value);
-              }}
-            />
-            <label htmlFor="black">Zwarte spijkers</label>
-          </main>
-          <main>
-            <input
-              type="radio"
-              value="clips"
-              name="fixture"
-              checked={fixture === "clips"}
-              onChange={(e) => {
-                setFixture(e.target.value);
-              }}
-            />
-            <label htmlFor="clips">Clips</label>
-          </main>
-          <main>
-            <input
-              type="radio"
-              value="screw"
-              name="fixture"
-              checked={fixture === "screw"}
-              onChange={(e) => {
-                setFixture(e.target.value);
-              }}
-            />
-            <label htmlFor="screw">Schroeven</label>
-          </main>
-        </fieldset>
-        <fieldset id="extras" name="extras">
-          <legend htmlFor="extras">Extra&apos;s:</legend>
-          <main>
+          </set>
+        </Radiofield>
+        <Radiofield id="fixture" name="fixture" label="Manier van bevestigen:">
+          {avFixture.map((item, index) => {
+            return (
+              <set key={"fixture-" + index}>
+                <input
+                  type="radio"
+                  value={item.value}
+                  name="fixture"
+                  id={item.value}
+                  checked={fixture === item.value}
+                  onChange={(e) => {
+                    setFixture(e.target.value);
+                  }}
+                />
+                <label htmlFor={item.value}>{item.label}</label>
+              </set>
+            );
+          })}
+        </Radiofield>
+        <Radiofield id="extras" name="extras" label="Extra's:">
+          <set>
             <input
               type="checkbox"
               value="waterSystem"
@@ -406,8 +344,8 @@ function FormComponent() {
               }}
             />
             <label htmlFor="waterSystem">Bewatering Systeem</label>
-          </main>
-          <main>
+          </set>
+          <set>
             <input
               type="checkbox"
               value="lightSystem"
@@ -418,8 +356,8 @@ function FormComponent() {
               }}
             />
             <label htmlFor="lightSystem">Verlichting</label>
-          </main>
-          <main>
+          </set>
+          <set>
             <input
               type="checkbox"
               value="installment"
@@ -430,11 +368,13 @@ function FormComponent() {
               }}
             />
             <label htmlFor="installment">Installatie</label>
-          </main>
-        </fieldset>
-      </PlanterSection>
+          </set>
+        </Radiofield>
+      </section>
       <Button type="submit">Verstuur</Button>
     </FormContainer>
+  ) : (
+    <Loading />
   );
 }
 

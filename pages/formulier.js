@@ -9,6 +9,7 @@ import FormComponent from "../components/form/form.component";
 import PaddingWrapper from "../components/wrappers/padding.wrapper";
 import BigCard from "../components/card/bigCard.component";
 import Faq from "../components/faq/faq.component";
+import { useState } from "react";
 
 export default function formPage() {
   return (
@@ -32,8 +33,8 @@ export default function formPage() {
               dit formulier contact op om alles nog een keer goed af te stemmen."
               src="/img/demoImg1.jpg"
             />
-            <FormComponent />
           </PaddingWrapper>
+          <FormComponent />
         </main>
         <Faq />
         <Footer />

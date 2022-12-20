@@ -10,11 +10,10 @@ const StyledFaq = styled.div`
   flex-direction: row;
   margin-top: 80px;
   margin-bottom: 80px;
-
   h2 {
-    font-size: 2.4rem;
     width: 100%;
   }
+
   ul {
     width: 100%;
   }
@@ -24,9 +23,6 @@ const StyledFaq = styled.div`
   @media only screen and (max-width: ${theme.small}) {
     margin-left: ${theme.padding.small};
     margin-right: ${theme.padding.small};
-    h2 {
-      font-size: 2rem;
-    }
   }
   @media only screen and (max-width: ${theme.tablet}) {
     flex-direction: column;
@@ -34,7 +30,6 @@ const StyledFaq = styled.div`
     margin-left: ${theme.padding.tablet};
     margin-right: ${theme.padding.tablet};
     h2 {
-      font-size: 1.7rem;
       margin-bottom: 1rem;
     }
   }
