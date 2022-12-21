@@ -6,7 +6,6 @@ import Head from "next/head";
 import { SSRProvider } from "@react-aria/ssr";
 import Footer from "../components/footer/footer.component";
 import FormComponent from "../components/form/form.component";
-import PaddingWrapper from "../components/wrappers/padding.wrapper";
 import BigCard from "../components/card/bigCard.component";
 import Faq from "../components/faq/faq.component";
 import { useState } from "react";
@@ -23,20 +22,17 @@ export default function formPage() {
           <Navbar />
         </header>
         <main>
-          <PaddingWrapper>
-            <BigCard
-              title="Contact"
-              p="Hier kun je vrijblijvend een aanvraag doen.
+          <BigCard
+            title="Contact"
+            p="Hier kun je vrijblijvend een aanvraag doen.
               Als je al een idee hebt over hoe je je plantenbak wilt hebben kun je
               dat hieronder invullen. Twijfel je nog over iets? Dat is geen
               probleem. Je kunt een vraag ook leeg laten. We nemen na aanleiding van
               dit formulier contact op om alles nog een keer goed af te stemmen."
-              src="/img/demoImg1.jpg"
-            />
-          </PaddingWrapper>
+            src="/img/demoImg1.jpg"
+          />
           <FormComponent />
         </main>
-        <Faq />
         <Footer />
       </ThemeProvider>
     </SSRProvider>

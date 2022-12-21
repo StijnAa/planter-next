@@ -29,7 +29,6 @@ const GlobalStyles = createGlobalStyle`
         padding-inline-start: 0;
     }
     a {
-        color: blue;
         text-decoration: none; 
     }
     button {

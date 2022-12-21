@@ -1,9 +1,10 @@
-import { useLink } from "@react-aria/link";
+import Link from "next/link";
 import styled from "styled-components";
 import React from "react";
 import theme from "../../styles/theme";
 
 const StyledLink = styled.a`
+  cursor: pointer;
   color: ${(props) => {
     return props.color || theme.colors.black;
   }};
@@ -12,21 +13,20 @@ const StyledLink = styled.a`
   }
 `;
 
-function TextLink(props) {
+export type TextLinkProps = {
+  href: string;
+  color?: string;
+  children: React.ReactNode;
+};
+
+export const TextLink: React.FC<TextLinkProps> = (props) => {
   let ref = React.useRef();
-  let { linkProps } = useLink(props, ref);
 
   return (
-    <StyledLink
-      {...props}
-      {...linkProps}
-      ref={ref}
-      href={props.href}
-      target={props.target}
-    >
-      {props.children}
-    </StyledLink>
+    <Link {...props} href={props.href}>
+      <StyledLink>{props.children}</StyledLink>
+    </Link>
   );
-}
+};
 
 export default TextLink;

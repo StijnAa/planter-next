@@ -26,15 +26,18 @@ const FormContainer = styled.form`
   margin-left: ${theme.padding.desktop};
   margin-right: ${theme.padding.desktop};
   @media only screen and (max-width: ${theme.small}) {
+    padding: 2rem;
     margin-left: ${theme.padding.small};
     margin-right: ${theme.padding.small};
   }
   @media only screen and (max-width: ${theme.tablet}) {
+    padding: ${theme.padding.tablet};
     border-radius: 0;
     margin-left: 0;
     margin-right: 0;
   }
   @media only screen and (max-width: ${theme.mobile}) {
+    padding: ${theme.padding.mobile};
   }
 `;
 
@@ -269,7 +272,7 @@ function FormComponent() {
           <option value="extra">4 planken</option>
         </Dropdown>
         <Radiofield id="wood" label="Soort Hout:">
-          <set>
+          <div>
             <input
               type="radio"
               value="notsure"
@@ -279,8 +282,8 @@ function FormComponent() {
               onChange={(e) => changeWood(e)}
             />
             <label htmlFor="notsure">Ik wil graag advies</label>
-          </set>
-          <set>
+          </div>
+          <div>
             <input
               type="radio"
               value="bamboo"
@@ -290,8 +293,8 @@ function FormComponent() {
               onChange={(e) => changeWood(e)}
             />
             <label htmlFor="bamboo">Bamboo</label>
-          </set>
-          <set>
+          </div>
+          <div>
             <input
               type="radio"
               value="douglas"
@@ -301,8 +304,8 @@ function FormComponent() {
               onChange={(e) => changeWood(e)}
             />
             <label htmlFor="douglas">Douglass</label>
-          </set>
-          <set>
+          </div>
+          <div>
             <input
               type="radio"
               value="hard"
@@ -312,12 +315,12 @@ function FormComponent() {
               onChange={(e) => changeWood(e)}
             />
             <label htmlFor="hard">Hard hout</label>
-          </set>
+          </div>
         </Radiofield>
         <Radiofield id="fixture" name="fixture" label="Manier van bevestigen:">
           {avFixture.map((item, index) => {
             return (
-              <set key={"fixture-" + index}>
+              <div key={"fixture-" + index}>
                 <input
                   type="radio"
                   value={item.value}
@@ -329,12 +332,12 @@ function FormComponent() {
                   }}
                 />
                 <label htmlFor={item.value}>{item.label}</label>
-              </set>
+              </div>
             );
           })}
         </Radiofield>
         <Radiofield id="extras" name="extras" label="Extra's:">
-          <set>
+          <div>
             <input
               type="checkbox"
               value="waterSystem"
@@ -345,8 +348,8 @@ function FormComponent() {
               }}
             />
             <label htmlFor="waterSystem">Bewatering Systeem</label>
-          </set>
-          <set>
+          </div>
+          <div>
             <input
               type="checkbox"
               value="lightSystem"
@@ -357,8 +360,8 @@ function FormComponent() {
               }}
             />
             <label htmlFor="lightSystem">Verlichting</label>
-          </set>
-          <set>
+          </div>
+          <div>
             <input
               type="checkbox"
               value="installment"
@@ -369,7 +372,7 @@ function FormComponent() {
               }}
             />
             <label htmlFor="installment">Installatie</label>
-          </set>
+          </div>
         </Radiofield>
       </section>
       <Button type="submit">Verstuur</Button>

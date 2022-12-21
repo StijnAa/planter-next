@@ -6,7 +6,6 @@ import Head from "next/head";
 import { SSRProvider } from "@react-aria/ssr";
 import Footer from "../components/footer/footer.component";
 import FormComponent from "../components/form/form.component";
-import PaddingWrapper from "../components/wrappers/padding.wrapper";
 import BigCard from "../components/card/bigCard.component";
 
 export default function formPage() {
@@ -21,13 +20,11 @@ export default function formPage() {
           <Navbar />
         </header>
         <main>
-          <PaddingWrapper>
-            <BigCard
-              title="Je aanvraag is verstuurd!"
-              p="We gaan zo snel mogelijk met je aanvraag aan de slag!"
-              src="/img/demoImg1.jpg"
-            />
-          </PaddingWrapper>
+          <BigCard
+            title="Je aanvraag is verstuurd!"
+            p="We gaan zo snel mogelijk met je aanvraag aan de slag!"
+            src="/img/demoImg1.jpg"
+          />
         </main>
         <Footer />
       </ThemeProvider>

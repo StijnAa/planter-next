@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import AccordionItem from "../accordion/accordionItem.component";
+import { FaqItem, FaqItemProps } from "./faqItem.component";
 import theme from "../../styles/theme";
 
 const StyledFaq = styled.div`
@@ -39,29 +39,23 @@ const StyledFaq = styled.div`
   }
 `;
 
-const Faq = () => {
+type FaqProps = {
+  title: string;
+  faqItems: FaqItemProps[];
+};
+
+const Faq: React.FC<FaqProps> = ({ title, faqItems }) => {
   return (
     <StyledFaq>
-      <h2>Frequendly A Q</h2>
+      <h2>{title}</h2>
       <ul>
-        <li>
-          <AccordionItem
-            title="Hoeveel weegt een bak?"
-            text="Dat is moeilijk te zeggen. Het hangt af van de houtsoort, de grote van de bak en de hoogte. Je kunt een schatting zien als je de bak configureerd."
-          />
-        </li>
-        <li>
-          <AccordionItem
-            title="Hoe zwaar is nou zo'n een bak"
-            text="Dat is moeilijk te zeggen. Het hangt af van de houtsoort, de grote van de bak en de hoogte. Je kunt een schatting zien als je de bak configureerd."
-          />
-        </li>
-        <li>
-          <AccordionItem
-            title="Als je naar he gewicht kijkt, waar moet ik dan aan denken?"
-            text="Dat is moeilijk te zeggen. Het hangt af van de houtsoort, de grote van de bak en de hoogte. Je kunt een schatting zien als je de bak configureerd."
-          />
-        </li>
+        {faqItems.map(({ question, answer }: FaqItemProps, index: number) => {
+          return (
+            <li key={"faqItem-" + index}>
+              <FaqItem question={question} answer={answer} />
+            </li>
+          );
+        })}
       </ul>
     </StyledFaq>
   );

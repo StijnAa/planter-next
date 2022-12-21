@@ -6,7 +6,6 @@ import Head from "next/head";
 import { SSRProvider } from "@react-aria/ssr";
 import Footer from "../components/footer/footer.component";
 import FormComponent from "../components/form/form.component";
-import PaddingWrapper from "../components/wrappers/padding.wrapper";
 import BigCard from "../components/card/bigCard.component";
 
 export default function formPage() {
@@ -21,15 +20,13 @@ export default function formPage() {
           <Navbar />
         </header>
         <main>
-          <PaddingWrapper>
-            <BigCard
-              title="Er is iets mis gegaan."
-              p="We hebben je aanvraag nog niet ontvangen. Probeer het nog een keer. Je kunt ook altijd contact op nemen via de mail."
-              buttonText="Terug"
-              href="/formulier"
-              src="/img/demoImg1.jpg"
-            />
-          </PaddingWrapper>
+          <BigCard
+            title="Er is iets mis gegaan."
+            p="We hebben je aanvraag nog niet ontvangen. Probeer het nog een keer. Je kunt ook altijd contact op nemen via de mail."
+            buttonText="Terug"
+            href="/formulier"
+            src="/img/demoImg1.jpg"
+          />
         </main>
         <Footer />
       </ThemeProvider>

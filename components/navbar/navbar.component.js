@@ -74,10 +74,10 @@ const NavListItem = styled.li`
     a {
       font-weight: 500;
     }
-  }
 
-  &:hover {
-    background-color: ${theme.colors.highlight};
+    &:has(a:hover) {
+      background-color: ${theme.colors.highlight};
+    }
   }
 `;
 const LogoContainer = styled.div`
@@ -145,13 +145,19 @@ const Navbar = () => {
         </LogoContainer>
         <NavList hambugerStateprop={hambugerState}>
           <NavListItem>
-            <TextLink href="/formulier">Aanvraag doen</TextLink>
+            <TextLink href="/formulier">
+              <span>Aanvraag doen</span>
+            </TextLink>
           </NavListItem>
           <NavListItem>
-            <TextLink href="/leesmeer">Lees meer</TextLink>
+            <TextLink href="/leesmeer">
+              <span>Lees meer</span>
+            </TextLink>
           </NavListItem>
           <NavListItem>
-            <TextLink href="/inspiratie">Inspiratie</TextLink>
+            <TextLink href="/inspiratie">
+              <span>Inspiratie</span>
+            </TextLink>
           </NavListItem>
         </NavList>
       </Nav>

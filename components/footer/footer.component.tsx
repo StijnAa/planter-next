@@ -61,20 +61,22 @@ const SocialLinksContainer = styled.ul`
   }
 `;
 
-const Footer = () => {
+type FooterProps = {};
+
+const Footer: React.FC<FooterProps> = () => {
   return (
     <StyledFooter>
       <ListContainer>
         <p>Planter</p>
-        <TextLink href="/">Our Mission</TextLink>
+        <TextLink href="/mission">Our Mission</TextLink>
         <TextLink href="/">Journal</TextLink>
       </ListContainer>
       <ListContainer>
         <p>___________</p>
-        <TextLink href="/">FAQ</TextLink>
-        <TextLink href="/">Terms of Service</TextLink>
-        <TextLink href="/">Privacy Policy</TextLink>
-        <TextLink href="/">Shipping & Returns</TextLink>
+        <TextLink href="/faq">FAQ</TextLink>
+        <TextLink href="/terms-of-service">Terms of Service</TextLink>
+        <TextLink href="/privacy-policy">Privacy Policy</TextLink>
+        <TextLink href="/shipping-returns">Shipping & Returns</TextLink>
       </ListContainer>
       <SocialLinksContainer>
         <p>Volg ons:</p>
