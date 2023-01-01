@@ -12,8 +12,6 @@ export const ContactApi = async (req: any, res: any) => {
       pass: process.env.PASSWORD,
     },
     secure: true,
-    rateDelta: 1000,
-    rateLimit: 1, // max 1 messages/second
   });
   await new Promise((resolve, reject) => {
     // verify connection configuration
