@@ -41,7 +41,7 @@ const LoadingContainer = styled.div`
   }
 `;
 
-const Loading = () => {
+const Loading: React.FC = () => {
   return (
     <LoadingContainer>
       <h3>Verzenden</h3>

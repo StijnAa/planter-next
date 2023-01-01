@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import ButtonLink from "../link/buttonLink.component";
-import Image from "next/image";
 import theme from "../../styles/theme";
+import Image from "next/image";
 
 const BigCardContainer = styled.div<BigCardContainerProps>`
   overflow: hidden;

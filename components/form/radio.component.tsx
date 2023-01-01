@@ -25,18 +25,23 @@ const Fieldset = styled.fieldset`
       width: 16px;
     }
   }
-  set {
+  div {
     display: flex;
     gap: 10px;
     align-items: center;
   }
 `;
+export type RadiofieldProps = {
+  id: string;
+  label: string;
+  children: React.ReactNode;
+};
 
-const Radiofield = (props) => {
+const Radiofield: React.FC<RadiofieldProps> = ({ id, label, children }) => {
   return (
-    <Fieldset id={props.id} name={props.id}>
-      <legend htmlFor={props.id}>{props.label}</legend>
-      {props.children}
+    <Fieldset name={id}>
+      <legend>{label}</legend>
+      {children}
     </Fieldset>
   );
 };

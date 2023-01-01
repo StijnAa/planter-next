@@ -21,12 +21,17 @@ const StyledButton = styled.a`
   }
 `;
 
-function ButtonLink(props) {
+export type ButtonLinkProps = {
+  href: string;
+  children: React.ReactNode;
+} & React.AnchorHTMLAttributes<HTMLAnchorElement>;
+
+const ButtonLink: React.FC<ButtonLinkProps> = ({ href, children }) => {
   return (
-    <Link href={props.href}>
-      <StyledButton>{props.children}</StyledButton>
+    <Link href={href}>
+      <StyledButton>{children}</StyledButton>
     </Link>
   );
-}
+};
 
 export default ButtonLink;

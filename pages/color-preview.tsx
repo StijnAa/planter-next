@@ -1,7 +1,7 @@
 import Navbar from "../components/navbar/navbar.component";
 import styled, { ThemeProvider } from "styled-components";
 import theme from "../styles/theme";
-import GlobalStyles from "../styles/global.js";
+import GlobalStyles from "../styles/global";
 import Head from "next/head";
 import { SSRProvider } from "@react-aria/ssr";
 import ColorPreview from "../components/colorPreview/colorPreview.component";

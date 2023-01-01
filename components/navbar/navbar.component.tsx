@@ -36,7 +36,7 @@ const Nav = styled.section`
   }
 `;
 
-const NavList = styled.ul`
+const NavList = styled.ul<NavListProps>`
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -126,7 +126,11 @@ const HamburgerContainer = styled.button`
   }
 `;
 
-const Navbar = () => {
+type NavListProps = {
+  hambugerStateprop: boolean;
+};
+
+const Navbar: React.FC = () => {
   const [hambugerState, setHambugerState] = useState(false);
   const hambugerClickHandler = () => {
     setHambugerState(!hambugerState);

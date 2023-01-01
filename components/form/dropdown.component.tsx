@@ -27,12 +27,26 @@ const DropdownContainer = styled.div`
   }
 `;
 
-const Dropdown = (props) => {
+export type DropdownProps = {
+  label: string;
+  id: string;
+  onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  value: string;
+  children: React.ReactNode;
+};
+
+const Dropdown: React.FC<DropdownProps> = ({
+  label,
+  id,
+  onChange,
+  value,
+  children,
+}) => {
   return (
     <DropdownContainer>
-      <label htmlFor="height">{props.label}</label>
-      <select id={props.id} onChange={props.onChange} value={props.value}>
-        {props.children}
+      <label htmlFor={id}>{label}</label>
+      <select id={id} onChange={onChange} value={value}>
+        {children}
       </select>
     </DropdownContainer>
   );

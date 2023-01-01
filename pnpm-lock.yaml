@@ -5,6 +5,7 @@ specifiers:
   '@react-aria/link': ^3.3.1
   '@react-aria/ssr': ^3.2.0
   '@types/node': ^18.11.17
+  '@types/nodemailer': ^6.4.7
   '@types/styled-components': ^5.1.26
   babel-plugin-styled-components: ^2.0.7
   dotenv: ^16.0.3
@@ -35,6 +36,7 @@ dependencies:
 
 devDependencies:
   '@types/node': 18.11.17
+  '@types/nodemailer': 6.4.7
   '@types/styled-components': 5.1.26
   babel-plugin-styled-components: 2.0.7_styled-components@5.3.5
   eslint: 8.19.0
@@ -529,6 +531,12 @@ packages:
 
   /@types/node/18.11.17:
     resolution: {integrity: sha512-HJSUJmni4BeDHhfzn6nF0sVmd1SMezP7/4F0Lq+aXzmp2xm9O7WXrUtHW/CHlYVtZUbByEvWidHqRtcJXGF2Ng==}
+    dev: true
+
+  /@types/nodemailer/6.4.7:
+    resolution: {integrity: sha512-f5qCBGAn/f0qtRcd4SEn88c8Fp3Swct1731X4ryPKqS61/A3LmmzN8zaEz7hneJvpjFbUUgY7lru/B/7ODTazg==}
+    dependencies:
+      '@types/node': 18.11.17
     dev: true
 
   /@types/prop-types/15.7.5:

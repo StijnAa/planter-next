@@ -317,7 +317,7 @@ function FormComponent() {
             <label htmlFor="hard">Hard hout</label>
           </div>
         </Radiofield>
-        <Radiofield id="fixture" name="fixture" label="Manier van bevestigen:">
+        <Radiofield id="fixture" label="Manier van bevestigen:">
           {avFixture.map((item, index) => {
             return (
               <div key={"fixture-" + index}>
@@ -336,7 +336,7 @@ function FormComponent() {
             );
           })}
         </Radiofield>
-        <Radiofield id="extras" name="extras" label="Extra's:">
+        <Radiofield id="extras" label="Extra's:">
           <div>
             <input
               type="checkbox"

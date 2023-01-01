@@ -20,12 +20,16 @@ const StyledButton = styled.p`
   }
 `;
 
-function Button(props) {
+export type ButtonProps = {
+  children: React.ReactNode,
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
   return (
     <button {...props}>
-      <StyledButton>{props.children}</StyledButton>
+      <StyledButton>{children}</StyledButton>
     </button>
   );
-}
+};
 
 export default Button;

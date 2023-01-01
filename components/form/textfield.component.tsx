@@ -23,16 +23,31 @@ const TextfieldLabel = styled.div`
   }
 `;
 
-const Textfield = (props) => {
+export type TextfieldProps = {
+  label: string;
+  id: string;
+  type: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string;
+} & React.InputHTMLAttributes<HTMLInputElement>;
+
+const Textfield: React.FC<TextfieldProps> = ({
+  label,
+  id,
+  type,
+  onChange,
+  value,
+  ...props
+}) => {
   return (
     <TextfieldLabel>
-      <label htmlFor={props.id}>{props.label}</label>
+      <label htmlFor={id}>{label}</label>
       <input
-        type={props.type}
-        id={props.id}
-        name={props.id}
-        onChange={props.onChange}
-        value={props.value}
+        type={type}
+        id={id}
+        name={id}
+        onChange={onChange}
+        value={value}
         {...props}
       />
     </TextfieldLabel>

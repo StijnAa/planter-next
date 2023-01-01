@@ -1,6 +1,6 @@
 import { createGlobalStyle, GlobalStyleComponent } from "styled-components";
 import theme from "./theme";
-import { fontBody, fontH1, fontH2, fontH3, fontH4 } from "./cssHelper";
+import { fontBody, fontH1, fontH2, fontH3 } from "./cssHelper";
 
 const GlobalStyles = createGlobalStyle`
 

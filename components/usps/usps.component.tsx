@@ -47,7 +47,7 @@ const UspsItem = styled.li`
   }
 `;
 
-const Usps = () => {
+const Usps: React.FC = () => {
   return (
     <UspsContainer>
       <UspsItem>

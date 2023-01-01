@@ -2,7 +2,7 @@ import * as React from "react";
 import Navbar from "../components/navbar/navbar.component";
 import { ThemeProvider } from "styled-components";
 import theme from "../styles/theme";
-import GlobalStyles from "../styles/global.js";
+import GlobalStyles from "../styles/global";
 import Head from "next/head";
 import { SSRProvider } from "@react-aria/ssr";
 import Usps from "../components/usps/usps.component";

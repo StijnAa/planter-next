@@ -1,7 +1,9 @@
-require("dotenv").config();
-let nodemailer = require("nodemailer");
+import * as dotenv from "dotenv";
+import * as nodemailer from "nodemailer";
 
-const ContactApi = async (req, res) => {
+dotenv.config();
+
+export const ContactApi = async (req: any, res: any) => {
   const transporter = nodemailer.createTransport({
     port: 465,
     host: "smtp.strato.com",
@@ -32,7 +34,7 @@ const ContactApi = async (req, res) => {
   const date = new Date();
   const mailData = {
     from: "planter@stijnaa.nl",
-    to: ["stijnaa@gmail.com", "info@planter.nl"],
+    to: [process.env.TOEMAILONE, process.env.TOEMAILTWO],
     subject: `Aanvraag van ${req.body.name} om ${date}`,
     html: `<div><p>Name: ${req.body.name}</p>
     <p>Email: ${req.body.email}</p>
