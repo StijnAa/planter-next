@@ -1,93 +1,43 @@
 import React from "react";
-import styled from "styled-components";
 import TextLink from "../link/textLink.component";
-import theme from "../../styles/theme";
 
-const StyledFooter = styled.footer`
-  background-color: ${theme.colors.black};
-  padding-left: ${theme.padding.desktop};
-  padding-right: ${theme.padding.desktop};
-  display: flex;
-  flex-direction: row;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  color: ${theme.colors.white};
-  a {
-    color: inherit;
-    font-weight: 300;
-  }
-  p {
-    margin-top: 10px;
-    margin-bottom: 50px;
-  }
-  @media only screen and (max-width: ${theme.small}) {
-    padding-left: ${theme.padding.small};
-    padding-right: ${theme.padding.small};
-  }
-  @media only screen and (max-width: ${theme.tablet}) {
-    flex-direction: column;
-    padding-left: ${theme.padding.tablet};
-    padding-right: ${theme.padding.tablet};
-  }
-  @media only screen and (max-width: ${theme.mobile}) {
-    padding-left: ${theme.padding.mobile};
-    padding-right: ${theme.padding.mobile};
-  }
-`;
-
-const ListContainer = styled.ul`
-  display: flex;
-  flex-direction: column;
-  margin-right: 130px;
-  a {
-    margin: 15px 0;
-  }
-
-  @media only screen and (max-width: ${theme.small}) {
-    margin-right: 70px;
-  }
-`;
-
-const SocialLinksContainer = styled.ul`
-  margin-left: auto;
-  display: flex;
-  flex-direction: row;
-  a {
-    margin: 0 0 0 50px;
-  }
-  @media only screen and (max-width: ${theme.tablet}) {
-    margin-left: 0;
-    margin-top: 80px;
-  }
-`;
-
-type FooterProps = {};
-
-const Footer: React.FC<FooterProps> = () => {
+const Footer: React.FC = () => {
   return (
-    <StyledFooter>
-      <ListContainer>
-        <p>Planter</p>
-        <TextLink href="/mission">Our Mission</TextLink>
-        <TextLink href="/">Journal</TextLink>
-      </ListContainer>
-      <ListContainer>
-        <p>___________</p>
-        <TextLink href="/faq">FAQ</TextLink>
-        <TextLink href="/terms-of-service">Terms of Service</TextLink>
-        <TextLink href="/privacy-policy">Privacy Policy</TextLink>
-        <TextLink href="/shipping-returns">Shipping & Returns</TextLink>
-      </ListContainer>
-      <SocialLinksContainer>
-        <p>Volg ons:</p>
-        <TextLink href="www.facebook.com">
+    <div className="footer">
+      <div className="footer__column">
+        <p className="footer__column-title">Planter</p>
+        <TextLink className="footer__column-link" href="/mission">
+          <p> Our Mission</p>
+        </TextLink>
+        <TextLink className="footer__column-link" href="/">
+          <p> Journal</p>
+        </TextLink>
+      </div>
+      <div className="footer__column">
+        <p className="footer__column-title">___________</p>
+        <TextLink className="footer__column-link" href="/faq">
+          <p> FAQ</p>
+        </TextLink>
+        <TextLink className="footer__column-link" href="/terms-of-service">
+          <p> Terms of Service </p>
+        </TextLink>
+        <TextLink className="footer__column-link" href="/privacy-policy">
+          <p> Privacy Policy</p>
+        </TextLink>
+        <TextLink className="footer__column-link" href="/shipping-returns">
+          <p> Shipping & Returns</p>
+        </TextLink>
+      </div>
+      <div className="footer__column footer__column--social">
+        <p className="footer__column-title">Volg ons:</p>
+        <TextLink className="footer__column-icon" href="www.facebook.com">
           <i className="icofont-facebook icofont-2x"></i>
         </TextLink>
-        <TextLink href="www.facebook.com">
+        <TextLink className="footer__column-icon" href="www.facebook.com">
           <i className="icofont-instagram icofont-2x"></i>
         </TextLink>
-      </SocialLinksContainer>
-    </StyledFooter>
+      </div>
+    </div>
   );
 };
 

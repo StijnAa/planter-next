@@ -1,54 +1,34 @@
 import React from "react";
-import styled from "styled-components";
 import { useState } from "react";
-
-const StyledAccordionItem = styled.div`
-  p {
-    margin-top: 10px;
-  }
-  header {
-    & > button {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      width: 100%;
-      text-align: left;
-
-      & > h4 {
-        display: inline;
-        font-weight: 400;
-      }
-
-      & > span {
-        margin-left: 20px;
-      }
-    }
-  }
-`;
+import cx from "classnames";
 
 export type FaqItemProps = {
   question: string;
   answer: string;
 };
 
-export const FaqItem: React.FC<FaqItemProps> = ({ question, answer }) => {
+export const FaqItem: React.FC<FaqItemProps> = ({ question, answer, key }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <StyledAccordionItem>
-      <header>
-        <button
-          onClick={() => {
-            setIsExpanded(!isExpanded);
-          }}
-        >
-          <h4>{question}</h4>
-          <span>{!isExpanded ? "+" : "-"}</span>
-        </button>
-      </header>
-      <section hidden={!isExpanded}>
-        <p>{answer}</p>
-      </section>
-    </StyledAccordionItem>
+    <li className="faq-item" key={key}>
+      <button
+        className="faq-item__button"
+        onClick={() => {
+          setIsExpanded(!isExpanded);
+        }}
+      >
+        <h4 className="faq-item__question">{question}</h4>
+        <span className="faq-item__indicator">{isExpanded ? "-" : "+"}</span>
+      </button>
+      <p
+        className={cx(
+          "faq-item__answer",
+          isExpanded && "faq-item__answer--expanded"
+        )}
+      >
+        {answer}
+      </p>
+    </li>
   );
 };

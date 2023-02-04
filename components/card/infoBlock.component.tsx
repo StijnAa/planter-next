@@ -1,0 +1,71 @@
+import React from "react";
+import Button from "../link/button.component";
+import Image from "next/image";
+import cx from "classnames";
+
+interface InfoBlockPropsBase {
+  title: string;
+  p: string;
+  card?: boolean;
+}
+
+interface InfoBlockPropsWithButton extends InfoBlockPropsBase {
+  buttonText: string;
+  href: string;
+}
+
+interface InfoBlockPropsWithImg extends InfoBlockPropsBase {
+  src: string;
+  alt: string;
+  imagePosition: "left" | "right";
+}
+
+type InfoBlockPropsWithEveryting = InfoBlockPropsBase &
+  InfoBlockPropsWithButton &
+  InfoBlockPropsWithImg;
+
+type InfoBlockProps =
+  | InfoBlockPropsBase
+  | InfoBlockPropsWithImg
+  | InfoBlockPropsWithButton
+  | InfoBlockPropsWithEveryting;
+
+export const InfoBlock: React.FC<InfoBlockProps> = (props) => {
+  return (
+    <div
+      className={cx(
+        "info-block",
+        "imagePosition" in props && "info-block--image",
+        props.card && "info-block--card"
+      )}
+    >
+      <div
+        className={cx(
+          "info-block__main",
+          "buttonText" in props && "info-block__main--has-button",
+          "imagePosition" in props &&
+            "info-block__main--image-" + props.imagePosition
+        )}
+      >
+        <h3 className="info-block__title">{props.title}</h3>
+        <p className="info-block__paragraph">{props.p}</p>
+        {"buttonText" in props && (
+          <div className="info-block__button-container">
+            <Button href={props.href}>{props.buttonText}</Button>
+          </div>
+        )}
+      </div>
+      {"src" in props && (
+        <div className="info-block__aside">
+          <Image
+            className="info-block__image"
+            src={props.src}
+            alt={props.alt}
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
+      )}
+    </div>
+  );
+};

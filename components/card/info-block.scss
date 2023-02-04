@@ -1,0 +1,50 @@
+.info-block {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: $white;
+
+  &--card {
+    border-radius: 0.8rem;
+  }
+
+  &--image {
+    grid-template-columns: 1fr 1fr;
+    @media only screen and (max-width: $tablet) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+  }
+}
+
+.info-block__main {
+  margin: 8rem 0;
+  padding: 3rem;
+  order: 1;
+
+  &--image-left {
+    order: 3;
+  }
+
+  @media only screen and (max-width: $small) {
+    margin: 5rem 0;
+    padding: 2rem;
+  }
+  @media only screen and (max-width: $tablet) {
+    order: 3;
+  }
+}
+
+.info-block__aside {
+  width: 100%;
+  position: relative;
+  order: 2;
+}
+
+.info-block__paragraph {
+  margin-top: 1rem;
+}
+
+.info-block__button-container {
+  margin-top: 2rem;
+}

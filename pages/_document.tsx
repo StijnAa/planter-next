@@ -41,7 +41,7 @@ export default class MyDocument extends Document {
           />
 
           <link
-            href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Work+Sans:wght@300;400;500&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Work+Sans:wght@300;400;500;600&display=swap"
             rel="stylesheet"
           />
           <link href="/icofont/icofont.min.css" rel="stylesheet" />

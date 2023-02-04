@@ -1,0 +1,85 @@
+.navigation-container {
+  height: 100px;
+  background-color: $highlight;
+  display: flex;
+  align-items: center;
+}
+
+.navigation {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  align-items: center;
+  @media only screen and (max-width: $tablet) {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
+.navigation--logo-hamburger-wrapper {
+  width: 100%;
+}
+
+.navigation__hambuger-button {
+  display: none;
+  @media only screen and (max-width: $tablet) {
+    display: block;
+    order: 0;
+    position: absolute;
+    transform: translate(-146px, 7px);
+  }
+}
+
+.navigation__logo {
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: "Josefin Sans", sans-serif;
+  @media only screen and (max-width: $tablet) {
+  }
+}
+
+.navigation__list {
+  display: flex;
+  margin-left: auto;
+  gap: 1rem;
+  text-align: center;
+  align-items: center;
+  @media only screen and (max-width: $tablet) {
+    display: none;
+    z-index: 20;
+    background-color: $white;
+    // width: 100%;
+    flex-direction: column;
+    position: absolute;
+    border-radius: 1rem;
+    top: 7rem;
+    gap: 0rem;
+    &--open {
+      display: block;
+    }
+  }
+}
+.navigation__nav-link {
+  font-size: 0.8rem;
+  @media only screen and (max-width: $tablet) {
+    a {
+      padding: 1rem 5rem;
+    }
+  }
+}
+.navigation__list-item {
+  &:nth-child(n + 4) {
+    display: none;
+  }
+  @media only screen and (max-width: $tablet) {
+    &:nth-child(n) {
+      border-radius: 1rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    &:hover {
+      background-color: $highlight;
+    }
+  }
+}

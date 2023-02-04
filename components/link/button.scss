@@ -1,0 +1,24 @@
+.planter-button {
+  color: $white;
+  background-color: $second;
+  display: inline-flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100rem;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  font-weight: 500;
+
+  &:hover {
+    transform: scale(0.98);
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    color: inherit;
+    cursor: pointer;
+    font-weight: inherit;
+  }
+}

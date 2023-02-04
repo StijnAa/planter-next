@@ -1,0 +1,14 @@
+.link__inherit {
+  a {
+    display: flex;
+    align-items: center;
+    color: inherit;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+
+    &:hover {
+      color: $linkHover;
+    }
+  }
+}

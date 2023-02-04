@@ -3,7 +3,7 @@ const theme = {
     main: "#627257",
     second: "#877154",
     highlight: "antiquewhite",
-    white: "#fff",
+    $white: "#fff",
     grey: "#eee",
     black: "#1f1d1d",
     linkHover: "#280",

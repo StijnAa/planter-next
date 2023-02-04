@@ -6,7 +6,7 @@ import Head from "next/head";
 import { SSRProvider } from "@react-aria/ssr";
 import Footer from "../components/footer/footer.component";
 import FormComponent from "../components/form/form.component";
-import BigCard from "../components/card/bigCard.component";
+import BigCard from "../components/card/infoBlock.component";
 
 export default function formPage() {
   return (

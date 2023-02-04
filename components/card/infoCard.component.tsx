@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import ButtonLink from "../link/buttonLink.component";
+import Button from "../link/button.component";
 import Image from "next/image";
 import theme from "../../styles/theme";
 
@@ -121,7 +121,7 @@ const InfoCard: React.FC<InfoCardProps> = (props) => {
         <h3>{props.title}</h3>
         <p>{props.p}</p>
         {"buttonText" in props && (
-          <ButtonLink href={props.href}>{props.buttonText}</ButtonLink>
+          <Button href={props.href}>{props.buttonText}</Button>
         )}
       </main>
       {"src" in props && (

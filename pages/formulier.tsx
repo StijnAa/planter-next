@@ -6,7 +6,7 @@ import Head from "next/head";
 import { SSRProvider } from "@react-aria/ssr";
 import Footer from "../components/footer/footer.component";
 import FormComponent from "../components/form/form.component";
-import BigCard from "../components/card/bigCard.component";
+import BigCard from "../components/card/infoBlock.component";
 import Faq from "../components/faq/faq.component";
 import { useState } from "react";
 
