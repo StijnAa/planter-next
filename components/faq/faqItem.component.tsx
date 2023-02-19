@@ -7,11 +7,11 @@ export type FaqItemProps = {
   answer: string;
 };
 
-export const FaqItem: React.FC<FaqItemProps> = ({ question, answer, key }) => {
+export const FaqItem: React.FC<FaqItemProps> = ({ question, answer }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <li className="faq-item" key={key}>
+    <li className="faq-item">
       <button
         className="faq-item__button"
         onClick={() => {
