@@ -1,6 +1,5 @@
 import React from "react";
-import styled from "styled-components";
-import theme from "../../styles/theme";
+
 import Image from "next/image";
 
 const ShoppingItemContainer = styled.li`

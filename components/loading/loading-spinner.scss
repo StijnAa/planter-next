@@ -1,0 +1,33 @@
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  background-color: $white;
+  border-radius: 0.8rem;
+  @media only screen and (max-width: $tablet) {
+    border-radius: 0;
+  }
+}
+
+.loading-spinner__text {
+  margin-bottom: 2rem;
+}
+
+.loading-spinner__icon {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner__text {
+  margin-bottom: 2rem;
+}

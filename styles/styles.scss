@@ -1,24 +1,21 @@
 $main: #627257;
 $second: #877154;
-$highlight: antiquewhite;
+$highlight: rgb(255, 246, 234);
 $white: #fff;
-$grey: #eee;
+$grey: #f5f5f5;
 $black: #1f1d1d;
 $linkHover: #280;
+$defaultColoredFill: "";
+
 $mobile: 600px;
 $tablet: 768px;
 $small: 1224px;
-$defaultColoredFill: "";
+
 $padding-mobile: 20px;
 $padding-tablet: 30px;
 $padding-small: 50px;
 $padding-desktop: 180px;
 
-@import "../components/card/info-block.scss";
-@import "../components/faq/faq.scss";
-@import "../components/footer/footer.scss";
-@import "../components/link/link.scss";
-@import "../components/link/button.scss";
-@import "../components/hero/hero.scss";
-@import "../components//usps/usps.scss";
-@import "../components//navbar/navbar.scss";
+@import "./reset.scss";
+@import "./global.scss";
+@import "./components.scss";

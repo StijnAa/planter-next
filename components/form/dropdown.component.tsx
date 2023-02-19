@@ -1,7 +1,6 @@
 import React from "react";
-import styled from "styled-components";
+
 import { formHeight, fontBody } from "../../styles/cssHelper";
-import theme from "../../styles/theme";
 
 const DropdownContainer = styled.div`
   label {

@@ -13,8 +13,8 @@ type HeroProps = {
 
 const Hero: React.FC<HeroProps> = (props) => {
   return (
-    <section className={cx("hero", "hero--" + props.size)}>
-      <main className="hero__container">
+    <section className={cx("hero", "hero--" + props.size, !props.img)}>
+      <main className="hero__container margin-wrapper">
         <h1 className={cx("hero__title", "hero__title--" + props.textPosition)}>
           {props.title}
         </h1>
@@ -22,7 +22,7 @@ const Hero: React.FC<HeroProps> = (props) => {
           <Button href={props.href}>{props.buttonText}</Button>
         )}
       </main>
-      <div className="hero__img">{props.img && props.img}</div>
+      <div className="hero__img">{props.img}</div>
     </section>
   );
 };

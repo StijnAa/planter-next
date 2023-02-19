@@ -1,8 +1,11 @@
 .navigation-container {
-  height: 100px;
+  height: 80px;
   background-color: $highlight;
   display: flex;
   align-items: center;
+  @media only screen and (max-width: $tablet) {
+    height: 60px;
+  }
 }
 
 .navigation {
@@ -24,9 +27,8 @@
   display: none;
   @media only screen and (max-width: $tablet) {
     display: block;
-    order: 0;
     position: absolute;
-    transform: translate(-146px, 7px);
+    transform: translate(-146px, 2px);
   }
 }
 
@@ -35,24 +37,24 @@
   font-weight: 600;
   font-family: "Josefin Sans", sans-serif;
   @media only screen and (max-width: $tablet) {
+    font-size: 1.3rem;
   }
 }
 
 .navigation__list {
   display: flex;
   margin-left: auto;
-  gap: 1rem;
+  gap: 1.5rem;
   text-align: center;
   align-items: center;
   @media only screen and (max-width: $tablet) {
     display: none;
     z-index: 20;
     background-color: $white;
-    // width: 100%;
     flex-direction: column;
     position: absolute;
     border-radius: 1rem;
-    top: 7rem;
+    top: 5rem;
     gap: 0rem;
     &--open {
       display: block;
@@ -68,7 +70,7 @@
   }
 }
 .navigation__list-item {
-  &:nth-child(n + 4) {
+  &:nth-child(n + 8) {
     display: none;
   }
   @media only screen and (max-width: $tablet) {

@@ -7,6 +7,7 @@ interface InfoBlockPropsBase {
   title: string;
   p: string;
   card?: boolean;
+  bgColor?: "main" | "second" | "highlight";
 }
 
 interface InfoBlockPropsWithButton extends InfoBlockPropsBase {
@@ -15,7 +16,7 @@ interface InfoBlockPropsWithButton extends InfoBlockPropsBase {
 }
 
 interface InfoBlockPropsWithImg extends InfoBlockPropsBase {
-  src: string;
+  image: string;
   alt: string;
   imagePosition: "left" | "right";
 }
@@ -36,7 +37,8 @@ export const InfoBlock: React.FC<InfoBlockProps> = (props) => {
       className={cx(
         "info-block",
         "imagePosition" in props && "info-block--image",
-        props.card && "info-block--card"
+        "card" in props && "info-block--card margin-wrapper",
+        "bgColor" in props && "info-block--" + props.bgColor
       )}
     >
       <div
@@ -55,16 +57,16 @@ export const InfoBlock: React.FC<InfoBlockProps> = (props) => {
           </div>
         )}
       </div>
-      {"src" in props && (
-        <div className="info-block__aside">
+      {"image" in props && (
+        <aside className="info-block__aside">
           <Image
             className="info-block__image"
-            src={props.src}
+            src={props.image}
             alt={props.alt}
             layout="fill"
             objectFit="cover"
           />
-        </div>
+        </aside>
       )}
     </div>
   );

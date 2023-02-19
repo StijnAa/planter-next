@@ -1,34 +1,35 @@
 .hero {
+  position: relative;
   background-color: $main;
+  z-index: -20;
   height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   &--big {
-    height: 800px;
-    @media only screen and (max-width: $mobile) {
+    height: 600px;
+    @media only screen and (max-width: $tablet) {
       align-items: center;
       height: 400px;
     }
   }
   &--small {
     height: 400px;
-    @media only screen and (max-width: $mobile) {
+    @media only screen and (max-width: $tablet) {
       align-items: center;
     }
   }
 }
 
 .hero__container {
-  position: absolute;
   z-index: 10;
-  width: 100%;
 }
 
 .hero__img {
   width: 100%;
   height: 100%;
-  position: relative;
+  position: absolute;
+  z-index: -10;
 }
 
 .hero__title {

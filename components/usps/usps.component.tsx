@@ -9,10 +9,10 @@ export type UspsProps = {
 
 export const Usps: React.FC<UspsProps> = ({ uspsList }) => {
   return (
-    <ul className="usps">
+    <ul className="usps padding-wrapper">
       {uspsList.map((item, i) => {
         return (
-          <li key={i}>
+          <li key={i} className="usps__item">
             <i className={cx("icofont-" + item.icon)} />
             <span>{item.text}</span>
           </li>

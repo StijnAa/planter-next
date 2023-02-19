@@ -3,7 +3,7 @@ import TextLink from "../link/textLink.component";
 
 const Footer: React.FC = () => {
   return (
-    <div className="footer">
+    <div className="footer padding-wrapper">
       <div className="footer__column">
         <p className="footer__column-title">Planter</p>
         <TextLink className="footer__column-link" href="/mission">

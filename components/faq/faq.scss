@@ -1,8 +1,8 @@
 .faq {
   display: flex;
   flex-direction: row;
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-top: 120px;
+  margin-bottom: 120px;
   gap: 1rem;
   @media only screen and (max-width: $tablet) {
     flex-direction: column;
@@ -10,6 +10,7 @@
   }
 }
 .faq__title {
+  line-height: 0.5;
   width: 100%;
   @media only screen and (max-width: $tablet) {
     margin-bottom: 1rem;
@@ -21,7 +22,7 @@
 }
 
 .faq-item {
-  padding: 0 0 15px 0;
+  padding: 0 0 35px 0;
 }
 
 .faq-item__answer {

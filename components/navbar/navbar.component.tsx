@@ -14,7 +14,7 @@ const Navbar: React.FC<navProps> = ({ linksList }) => {
   };
 
   return (
-    <div className="navigation-container">
+    <div className="navigation-container padding-wrapper">
       <nav className="navigation">
         <button
           className="navigation__hambuger-button"

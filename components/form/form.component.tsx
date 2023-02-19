@@ -1,6 +1,5 @@
 import React from "react";
-import styled from "styled-components";
-import theme from "../../styles/theme";
+
 import Button from "../link/button.component";
 import { useState } from "react";
 import Router from "next/router";

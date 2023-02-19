@@ -8,7 +8,7 @@ type FaqProps = {
 
 const Faq: React.FC<FaqProps> = ({ title, faqItems }) => {
   return (
-    <div className="faq">
+    <div className="faq margin-wrapper">
       <h2 className="faq__title">{title}</h2>
       <ul className="faq__list">
         {faqItems.map(({ question, answer }: FaqItemProps, index: number) => {

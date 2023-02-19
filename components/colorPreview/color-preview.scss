@@ -1,0 +1,31 @@
+.color-preview {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  height: 400px;
+}
+
+.color-preview__item {
+  &.main {
+    background-color: $main;
+  }
+  &.second {
+    background-color: $second;
+  }
+
+  &.highlight {
+    background-color: $highlight;
+  }
+
+  &.white {
+    background-color: $white;
+  }
+
+  &.grey {
+    background-color: $grey;
+  }
+
+  &.black {
+    background-color: $black;
+  }
+}

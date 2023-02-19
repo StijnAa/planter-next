@@ -1,6 +1,5 @@
 import React from "react";
-import styled from "styled-components";
-import theme from "../../styles/theme";
+
 import { formHeight, fontBody } from "../../styles/cssHelper";
 const TextfieldLabel = styled.div`
   display: block;
