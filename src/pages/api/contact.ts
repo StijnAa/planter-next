@@ -8,7 +8,6 @@ export const ContactApi = async (req: any, res: any) => {
       user: "planter@stijnaa.nl",
       pass: process.env.PASSWORD,
     },
-    secure: true,
   });
   await new Promise((resolve, reject) => {
     transporter.verify((err: Error | null, success: true) => {
