@@ -5,7 +5,7 @@ import cx from "classnames";
 
 interface InfoBlockPropsBase {
   title: string;
-  p: string;
+  children: string | React.ReactNode;
   card?: boolean;
   bgColor?: "main" | "second" | "highlight";
 }
@@ -50,7 +50,7 @@ export const InfoBlock: React.FC<InfoBlockProps> = (props) => {
         )}
       >
         <h3 className="info-block__title">{props.title}</h3>
-        <p className="info-block__paragraph">{props.p}</p>
+        <div className="info-block__content">{props.children}</div>
         {"buttonText" in props && (
           <div className="info-block__button-container">
             <Button href={props.href}>{props.buttonText}</Button>

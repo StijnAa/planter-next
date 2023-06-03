@@ -1,7 +1,6 @@
 .hero {
   position: relative;
   background-color: $main;
-  z-index: -20;
   height: 400px;
   display: flex;
   flex-direction: column;
@@ -29,7 +28,9 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: -10;
+  img {
+    object-fit: cover;
+  }
 }
 
 .hero__title {

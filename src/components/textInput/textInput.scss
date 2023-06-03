@@ -1,0 +1,25 @@
+.email-input__input {
+  border: none;
+  outline: none;
+  background: $grey;
+  width: 100%;
+  padding: 0.5rem 1.1rem;
+  transition: all 0.3s ease-in-out;
+  border-radius: 100px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  font-size: 0.8rem;
+  &::placeholder {
+    color: #252525;
+  }
+  &:focus {
+    border-color: $main;
+  }
+}
+
+.email-input__container {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 10px;
+}
