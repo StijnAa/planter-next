@@ -25,11 +25,10 @@ export const ContactApi = async (req: any, res: any) => {
     });
   });
 
-  const date = new Date();
   const emailForPlanter = {
     from: "planter@stijnaa.nl",
     to: "stijnaa@gmail.com",
-    subject: `Aanvraag van ${req.body.email} om ${date}`,
+    subject: `Aanvraag van ${req.body.email}`,
     html: `<a href="mailto:${req.body.email}">${req.body.email}</p>`,
   };
 
@@ -38,8 +37,8 @@ export const ContactApi = async (req: any, res: any) => {
     to: req.body.email,
     subject: `Bevestiging Planter.nl`,
     html: `
-    <h3>We hebben je aanvraag ontvangen! We gaan er zo snel mogelijk mee aan de slag.</h3>
-    <h4>Groetjes Tjerk van Planter.nl</h4>`,
+    <p>We hebben je aanvraag ontvangen! We gaan er zo snel mogelijk mee aan de slag.</p>
+    <p>Groetjes Tjerk van Planter.nl</p>`,
   };
 
   await new Promise((resolve, reject) => {
