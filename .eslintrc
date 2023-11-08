@@ -1,0 +1,108 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint", "prettier", "react", "import"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
+    ],
+    "rules": {
+        "prettier/prettier": ["warn"],
+        // Have prettier warn (not error) us about formatting issues
+        "linebreak-style": ["warn", "unix"],
+        // Warning users to remove console logs
+        "default-case": ["error"],
+        // Warning users to have a default in a switch statement
+        "max-lines": [
+            "warn",
+            {
+                "max": 300
+            }
+        ],
+        // Max lines per file, max set to 300
+        "react/prop-types": ["off"],
+        // No need to have prop types, we're using Typescript for this,
+        "react/no-multi-comp": ["warn"],
+        "react/self-closing-comp": ["warn"],
+        // Warn users to not have multiple components in a single file
+        "react/jsx-curly-brace-presence": [
+            "warn",
+            {
+                "props": "never",
+                "children": "never",
+                "propElementValues": "always"
+            }
+        ],
+        "import/order": [
+            "warn",
+            {
+                "pathGroups": [
+                    {
+                        "pattern": "react",
+                        "group": "builtin",
+                        "position": "before"
+                    }
+                ],
+                "pathGroupsExcludedImportTypes": ["react"]
+            }
+        ],
+        "quotes": ["warn", "double"],
+        "eqeqeq": ["warn", "always"],
+        "@typescript-eslint/array-type": [
+            "warn",
+            {
+                "default": "array"
+            }
+        ],
+        "@next/next/no-img-element": "off",
+        "@typescript-eslint/no-namespace": "off",
+        "@typescript-eslint/no-unused-vars": ["warn"],
+        "react/button-has-type": [
+            "warn",
+            {
+                "button": true,
+                "submit": true,
+                "reset": true
+            }
+        ],
+        "prefer-const": [
+            "warn",
+            {
+                "destructuring": "any",
+                "ignoreReadBeforeAssign": false
+            }
+        ],
+        "import/prefer-default-export": [
+            "warn",
+            {
+                "target": "single"
+            }
+        ],
+        "no-duplicate-imports": ["warn"],
+        "object-shorthand": ["warn", "always"],
+        "max-depth": ["warn", 3],
+        "no-template-curly-in-string": ["warn"],
+        "no-useless-concat": ["warn"],
+        "comma-dangle": ["warn", "always-multiline"],
+        "@typescript-eslint/ban-ts-comment": [
+            "warn",
+            {
+                "ts-ignore": "allow-with-description",
+                "ts-expect-error": "allow-with-description",
+                "ts-check": false,
+                "minimumDescriptionLength": 30
+            }
+        ]
+    },
+    "env": {
+        "jest": true,
+        "node": true
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    }
+}
