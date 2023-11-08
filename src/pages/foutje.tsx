@@ -1,10 +1,8 @@
 import * as React from "react";
 import Head from "next/head";
 import Navbar from "../components/navbar/navbar.component";
-import { InfoBlock } from "../components/card/infoBlock.component";
+import InfoBlock from "../components/card/infoBlock.component";
 import Footer from "../components/footer/footer.component";
-
-import EmailInput from "@/components/textInput/textInput";
 
 export default function Home() {
     return (

@@ -7,7 +7,7 @@ import Hero from "../components/hero/hero.component";
 import { InfoBlock } from "../components/card/infoBlock.component";
 import Footer from "../components/footer/footer.component";
 import Faq from "../components/faq/faq.component";
-import EmailInput from "@/components/textInput/textInput";
+import EmailInput from "../components/textInput/textInput";
 
 export default function Home() {
     return (

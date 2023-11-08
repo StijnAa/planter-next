@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import cx from "classnames";
 
@@ -13,6 +12,7 @@ export const FaqItem: React.FC<FaqItemProps> = ({ question, answer }) => {
     return (
         <li className="faq-item">
             <button
+                type="button"
                 className="faq-item__button"
                 onClick={() => {
                     setIsExpanded(!isExpanded);

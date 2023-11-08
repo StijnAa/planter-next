@@ -6,7 +6,8 @@
         "eslint:recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
-        "prettier"
+        "prettier",
+        "plugin:@next/next/recommended"
     ],
     "rules": {
         "prettier/prettier": ["warn"],
@@ -24,7 +25,6 @@
         // Max lines per file, max set to 300
         "react/prop-types": ["off"],
         // No need to have prop types, we're using Typescript for this,
-        "react/no-multi-comp": ["warn"],
         "react/self-closing-comp": ["warn"],
         // Warn users to not have multiple components in a single file
         "react/jsx-curly-brace-presence": [

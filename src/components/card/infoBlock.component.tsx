@@ -29,7 +29,7 @@ type InfoBlockProps =
     | InfoBlockPropsWithButton
     | InfoBlockPropsWithEveryting;
 
-export const InfoBlock: React.FC<InfoBlockProps> = (props) => {
+const InfoBlock: React.FC<InfoBlockProps> = (props) => {
     return (
         <div
             className={cx(
@@ -68,3 +68,5 @@ export const InfoBlock: React.FC<InfoBlockProps> = (props) => {
         </div>
     );
 };
+
+export default InfoBlock;
