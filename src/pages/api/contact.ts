@@ -1,6 +1,7 @@
 import * as nodemailer from "nodemailer";
+import { NextApiRequest, NextApiResponse } from "next";
 
-export const ContactApi = async (req: any, res: any) => {
+export const ContactApi = async (req: NextApiRequest, res: NextApiResponse) => {
     const transporter = nodemailer.createTransport({
         port: 465,
         host: "smtp.strato.com",
@@ -62,7 +63,7 @@ export const ContactApi = async (req: any, res: any) => {
             }
         });
     });
-    res.status(200).json();
+    res.status(200).json({});
 };
 
 export default ContactApi;
