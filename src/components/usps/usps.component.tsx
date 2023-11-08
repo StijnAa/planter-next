@@ -7,7 +7,7 @@ export type UspsProps = {
     uspsList: UspsItem[];
 };
 
-export const Usps: React.FC<UspsProps> = ({ uspsList }) => {
+const Usps: React.FC<UspsProps> = ({ uspsList }) => {
     return (
         <ul className="usps padding-wrapper">
             {uspsList.map((item, i) => {
@@ -21,3 +21,5 @@ export const Usps: React.FC<UspsProps> = ({ uspsList }) => {
         </ul>
     );
 };
+
+export default Usps;
