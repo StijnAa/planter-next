@@ -1,0 +1,54 @@
+{% set subject = formTitle %}
+
+{% extends "./base.njk" %}
+
+{% macro tableRow(label, value, first, last) %}
+    <tr>
+        <td class="data-table__label {% if first %}is-first{% endif %} {% if last %}is-last{% endif %}"><strong>{{ label }}</strong>:</td>
+        <td class="data-table__value {% if first %}is-first{% endif %} {% if last %}is-last{% endif %}">{{ value }}</td>
+    </tr>
+{% endmacro %}
+
+{% macro groupTitle(title) %}
+    <tr>
+        <td class="data-table__group-title" colspan="2">{{ title }}</td>
+    </tr>
+{% endmacro %}
+
+{% macro groupTable(title, fields, first, last) %}
+    <tr>
+        <td class="data-table__group {% if first %}is-first{% endif %} {% if last %}is-last{% endif %}" colspan="2">
+            <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                    {% if title %}{{ groupTitle(title) }}{% endif %}
+                    {% for field in fields %}
+                        {{ tableRow(field.label, field.value.readable, loop.first, loop.last) }}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </td>
+    </tr>
+{% endmacro %}
+
+{% block dataTable %}
+    {% for field in fields %}
+        {% if field.type !== "FIELD_GROUP" %}
+            {{ tableRow(field.label, field.value.readable, loop.first, loop.last) }}
+        {% else %}
+            {{ groupTable(field.label, field.fields, loop.first, loop.last) }}
+        {% endif %}
+    {% endfor %}
+
+    <tr>
+        <td class="data-table__json is-last" colspan="2">
+            <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                    {{ groupTitle("JSON") }}
+                    <tr>
+                        <td colspan="2"><pre>{{ fields | dump }}</pre></td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+{% endblock %}

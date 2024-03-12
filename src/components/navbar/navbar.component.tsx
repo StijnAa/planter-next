@@ -3,10 +3,17 @@ import cx from "classnames";
 import TextLink from "../link/textLink.component";
 
 type navProps = {
-    linksList: { text: string; href: string }[];
+    linksList?: { text: string; href: string }[];
 };
 
-const Navbar: React.FC<navProps> = ({ linksList }) => {
+const defaultNavList = [
+    { text: "Houtkeuze", href: "/hout" },
+    { text: "Bezorging", href: "/bezorging" },
+    { text: "Contact", href: "/contact" },
+    { text: "Over Planter", href: "/over-planter" },
+];
+
+const Navbar: React.FC<navProps> = ({ linksList = defaultNavList }) => {
     const [hambugerOpen, setHambugerOpen] = useState(false);
 
     const hambugerClickHandler = () => {

@@ -1,10 +1,10 @@
-import React from "react";
+import React, { FC, useState } from "react";
 import z from "zod";
 import Button from "../link/button.component";
 
-const EmailInput: React.FC = () => {
-    const [loading, setLoading] = React.useState(false);
-    const [email, setEmail] = React.useState("");
+const EmailInput: FC = () => {
+    const [loading, setLoading] = useState(false);
+    const [email, setEmail] = useState("");
 
     const handleSubmit = async () => {
         setLoading(true);
@@ -53,6 +53,7 @@ const EmailInput: React.FC = () => {
                     placeholder="Email"
                     onChange={(e) => setEmail(e.target.value)}
                 />
+                {/* TODO: add honeypot */}
                 <Button onClick={() => handleSubmit()}>{loading ? "..." : "Verzenden"}</Button>
             </div>
         </form>

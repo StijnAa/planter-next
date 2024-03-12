@@ -1,0 +1,55 @@
+.main {
+    margin-bottom: 32px;
+}
+
+.data-table__form-title {
+    padding-bottom: 24px;
+}
+
+.data-table__label,
+.data-table__value,
+.data-table__group-title {
+    padding-bottom: 16px;
+}
+
+.data-table__group {
+    padding-top: 16px;
+    padding-bottom: 32px;
+}
+
+.data-table__form-title,
+.data-table__group-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #01689b;
+}
+
+.data-table__label {
+    width: 45%;
+    padding-right: 16px;
+}
+
+.data-table__value {
+    width: 65%;
+    white-space: break-spaces;
+    word-break: break-word;
+}
+
+.data-table__json {
+    padding-top: 32px;
+}
+
+.data-table__json pre {
+    white-space: break-spaces;
+    word-break: break-word;
+    font-size: 10px;
+    margin: 0;
+}
+
+.is-first {
+    padding-top: 0 !important;
+}
+
+.is-last {
+    padding-bottom: 0 !important;
+}

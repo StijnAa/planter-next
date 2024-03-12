@@ -1,106 +1,107 @@
 .info-block {
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: 1fr;
-  background-color: $white;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: $white;
 
-  &--card {
-    border-radius: 0.8rem;
-    margin-top: calc($padding-small * 2);
-    margin-bottom: calc($padding-small * 2);
-    @media only screen and (max-width: $tablet) {
-      margin-top: calc($padding-tablet * 2);
-      margin-bottom: calc($padding-tablet * 2);
+    &--card {
+        border-radius: 0.8rem;
+        margin-top: calc($padding-small * 2);
+        margin-bottom: calc($padding-small * 2);
+        @media only screen and (max-width: $tablet) {
+            margin-top: calc($padding-tablet * 2);
+            margin-bottom: calc($padding-tablet * 2);
+        }
     }
-  }
 
-  &--image {
-    grid-template-columns: 1fr 1fr;
-    @media only screen and (max-width: $tablet) {
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
+    &--image {
+        grid-template-columns: 1fr 1fr;
+        @media only screen and (max-width: $tablet) {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
     }
-  }
-  &--main {
-    background-color: $main;
-    color: $white;
-  }
-  &--second {
-    background-color: $second;
-    color: $white;
-  }
-  &--highlight {
-    background-color: $highlight;
-    color: black;
-  }
+    &--main {
+        background-color: $main;
+        color: $white;
+    }
+    &--second {
+        background-color: $second;
+        color: $white;
+    }
+    &--highlight {
+        background-color: $highlight;
+        color: black;
+    }
 }
 
 .info-block__main {
-  margin-top: 8rem;
-  margin-bottom: 8rem;
-  margin-left: $padding-desktop;
-  margin-right: $padding-desktop;
-  order: 1;
-
-  &--image-right {
+    margin-top: 8rem;
+    margin-bottom: 8rem;
     margin-left: $padding-desktop;
-    margin-right: 2rem;
-  }
-
-  &--image-left {
-    order: 3;
-    margin-left: 2rem;
     margin-right: $padding-desktop;
-  }
-
-  @media only screen and (max-width: $small) {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-
-    margin-left: $padding-small;
-    margin-right: $padding-small;
+    order: 1;
 
     &--image-right {
-      margin-left: $padding-small;
-      margin-right: 2rem;
+        margin-left: $padding-desktop;
+        margin-right: 2rem;
     }
 
     &--image-left {
-      order: 3;
-      margin-left: 2rem;
-      margin-right: $padding-small;
+        order: 3;
+        margin-left: 2rem;
+        margin-right: $padding-desktop;
     }
-  }
-  @media only screen and (max-width: $tablet) {
-    margin-left: $padding-tablet;
-    margin-right: $padding-tablet;
 
-    order: 3;
-  }
+    @media only screen and (max-width: $small) {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+
+        margin-left: $padding-small;
+        margin-right: $padding-small;
+
+        &--image-right {
+            margin-left: $padding-small;
+            margin-right: 2rem;
+        }
+
+        &--image-left {
+            order: 3;
+            margin-left: 2rem;
+            margin-right: $padding-small;
+        }
+    }
+    @media only screen and (max-width: $tablet) {
+        margin-left: $padding-tablet;
+        margin-right: $padding-tablet;
+
+        order: 3;
+    }
 }
 
 .info-block--card {
-  .info-block__main {
-    margin-left: 2rem;
-    margin-right: 2rem;
-    @media only screen and (max-width: $tablet) {
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
+    .info-block__main {
+        margin-left: 2rem;
+        margin-right: 2rem;
+        @media only screen and (max-width: $tablet) {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            padding-inline: 14px;
+        }
     }
-  }
 }
 
 .info-block__aside {
-  width: 100%;
-  position: relative;
-  order: 2;
+    width: 100%;
+    position: relative;
+    order: 2;
 }
 
 .info-block__content {
-  margin-top: 1rem;
+    margin-top: 1rem;
 }
 
 .info-block__button-container {
-  margin-top: 2rem;
+    margin-top: 2rem;
 }

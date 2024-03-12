@@ -6,13 +6,32 @@
         "eslint:recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
-        "prettier",
-        "plugin:@next/next/recommended"
+        "plugin:@next/next/recommended",
+        "prettier"
+    ],
+    "overrides": [
+        {
+            "files": ["*.test.ts", "*.test.tsx", "__mocks__/**/*"],
+            "rules": {
+                "@next/next/no-html-link-for-pages": ["off"],
+                "react/no-multi-comp": ["off"],
+                "@typescript-eslint/no-explicit-any": ["off"],
+                "@typescript-eslint/no-non-null-assertion": ["off"],
+                "max-lines": ["off"]
+            }
+        }
     ],
     "rules": {
         "prettier/prettier": ["warn"],
         // Have prettier warn (not error) us about formatting issues
         "linebreak-style": ["warn", "unix"],
+        // Warn users to use LF, not CRLF
+        "no-console": [
+            "warn",
+            {
+                "allow": ["warn", "error", "info"]
+            }
+        ],
         // Warning users to remove console logs
         "default-case": ["error"],
         // Warning users to have a default in a switch statement
@@ -22,9 +41,10 @@
                 "max": 300
             }
         ],
-        // Max lines per file, max set to 300
+        // Max lines per file, max set to 100
         "react/prop-types": ["off"],
         // No need to have prop types, we're using Typescript for this,
+        "react/no-multi-comp": ["warn"],
         "react/self-closing-comp": ["warn"],
         // Warn users to not have multiple components in a single file
         "react/jsx-curly-brace-presence": [
@@ -48,7 +68,13 @@
                 "pathGroupsExcludedImportTypes": ["react"]
             }
         ],
-        "quotes": ["warn", "double"],
+        "quotes": [
+            "warn",
+            "double",
+            {
+                "avoidEscape": true
+            }
+        ],
         "eqeqeq": ["warn", "always"],
         "@typescript-eslint/array-type": [
             "warn",
@@ -97,7 +123,6 @@
         ]
     },
     "env": {
-        "jest": true,
         "node": true
     },
     "settings": {

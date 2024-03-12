@@ -11,14 +11,7 @@ export default function Home() {
                 <title>Planter.nl</title>
             </Head>
             <header>
-                <Navbar
-                    linksList={[
-                        { text: "Houtkeuze", href: "/hout" },
-                        { text: "Bezorging", href: "/bezorging" },
-                        { text: "Contact", href: "/contact" },
-                        { text: "Over Planter", href: "/over-planter" },
-                    ]}
-                />
+                <Navbar />
             </header>
 
             <main>
