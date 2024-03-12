@@ -1,6 +1,8 @@
 import React from "react";
 import TextLink from "../link/textLink.component";
 
+// TODO: footer restylen
+
 const Footer: React.FC = () => {
     return (
         <div className="footer padding-wrapper">

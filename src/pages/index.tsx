@@ -7,7 +7,7 @@ import Hero from "../components/hero/hero.component";
 import InfoBlock from "../components/card/infoBlock.component";
 import Footer from "../components/footer/footer.component";
 import Faq from "../components/faq/faq.component";
-import EmailInput from "../components/textInput/textInput";
+import EmailInput from "../components/emailInput/emailInput";
 
 export default function Home() {
     return (
@@ -16,14 +16,7 @@ export default function Home() {
                 <title>Planter.nl</title>
             </Head>
             <header>
-                <Navbar
-                    linksList={[
-                        { text: "Houtkeuze", href: "/hout" },
-                        { text: "Bezorging", href: "/bezorging" },
-                        { text: "Contact", href: "/contact" },
-                        { text: "Over Planter", href: "/over-planter" },
-                    ]}
-                />
+                <Navbar />
             </header>
 
             <main>

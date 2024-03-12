@@ -1,44 +1,55 @@
 .footer {
-  background-color: $black;
-  display: flex;
-  flex-direction: row;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  color: $white;
-  gap: 100px;
+    background-color: $black;
+    display: flex;
+    flex-direction: row;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    color: $white;
+    gap: 100px;
 
-  @media only screen and (max-width: $tablet) {
-    gap: 50px;
-    flex-direction: column;
-  }
+    @media only screen and (max-width: $tablet) {
+        gap: 50px;
+        flex-direction: column;
+    }
 }
 
 .footer__column-title {
-  color: inherit;
-  margin-top: 10px;
-  margin-bottom: 50px;
+    color: inherit;
+    margin-top: 10px;
+    margin-bottom: 50px;
 }
 
 .footer__column-link {
-  color: $white;
-  font-weight: 300;
-  margin: 15px 0;
+    color: $white;
+    font-weight: 300;
+    margin: 15px 0;
 }
 
 .footer__column {
-  display: flex;
-  flex-direction: column;
-  &--social {
-    margin-left: auto;
     display: flex;
-    flex-direction: row;
-    @media only screen and (max-width: $tablet) {
-      margin-left: 0;
+    flex-direction: column;
+    &--social {
+        margin-left: auto;
+        display: flex;
+        flex-direction: row;
+        @media only screen and (max-width: $tablet) {
+            margin-left: 0;
+        }
     }
-  }
 }
 
 .footer__column-icon {
-  color: inherit;
-  margin: 0 0 0 50px;
+    color: inherit;
+}
+
+.footer__column--social {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    .icofont-2x {
+        font-size: 1.5em;
+        @media only screen and (max-width: $tablet) {
+            font-size: 1.2em;
+        }
+    }
 }
