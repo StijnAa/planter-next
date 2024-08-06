@@ -64,6 +64,7 @@ const InfoBlock: React.FC<InfoBlockProps> = (props) => {
                         alt={props.alt}
                         layout="fill"
                         objectFit="cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"
                     />
                 </aside>
             )}

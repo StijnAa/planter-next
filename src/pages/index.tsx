@@ -33,6 +33,7 @@ export default function Home() {
                             alt="Vertoning van een unieke houten plantenbak"
                             objectPosition="bottom"
                             loading="eager"
+                            sizes="100vw"
                         />
                     }
                 />
@@ -47,7 +48,7 @@ export default function Home() {
 
                 <InfoBlock
                     title="Op maat gemaakte plantenbakken"
-                    image="/img/CAS05073.jpg"
+                    image="/img/CAS05013.jpg"
                     alt="Showcase van unieke plantenbakken"
                     imagePosition="right"
                     card
@@ -60,7 +61,7 @@ export default function Home() {
 
                 <InfoBlock
                     title="Neem contact op"
-                    image="/img/CAS05013.jpg"
+                    image="/img/CAS05073.jpg"
                     imagePosition="left"
                     alt="Contact opnemen"
                     card
