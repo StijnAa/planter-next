@@ -32,6 +32,7 @@ export default function Home() {
                             fill
                             alt="Vertoning van een unieke houten plantenbak"
                             objectPosition="bottom"
+                            loading="eager"
                         />
                     }
                 />
