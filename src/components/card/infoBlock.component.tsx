@@ -8,6 +8,7 @@ interface InfoBlockPropsBase {
     children: string | React.ReactNode;
     card?: boolean;
     bgColor?: "main" | "second" | "highlight";
+    className?: string;
 }
 
 interface InfoBlockPropsWithButton extends InfoBlockPropsBase {
@@ -34,6 +35,7 @@ const InfoBlock: React.FC<InfoBlockProps> = (props) => {
         <div
             className={cx(
                 "info-block",
+                props.className,
                 "imagePosition" in props && "info-block--image",
                 "card" in props && "info-block--card margin-wrapper",
                 "bgColor" in props && "info-block--" + props.bgColor,
@@ -62,6 +64,7 @@ const InfoBlock: React.FC<InfoBlockProps> = (props) => {
                         alt={props.alt}
                         layout="fill"
                         objectFit="cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"
                     />
                 </aside>
             )}

@@ -17,7 +17,7 @@ export default function Home() {
             <main>
                 <InfoBlock
                     title="Woops!"
-                    image="/img/demoImg1.jpg"
+                    image="/img/CAS05068.jpg"
                     alt="zonnige tuin"
                     imagePosition="right"
                     buttonText="Terug"

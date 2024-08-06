@@ -8,7 +8,6 @@ type navProps = {
 
 const defaultNavList = [
     { text: "Houtkeuze", href: "/hout" },
-    { text: "Bezorging", href: "/bezorging" },
     { text: "Contact", href: "/contact" },
     { text: "Over Planter", href: "/over-planter" },
 ];
@@ -23,7 +22,12 @@ const Navbar: React.FC<navProps> = ({ linksList = defaultNavList }) => {
     return (
         <div className="navigation-container padding-wrapper">
             <nav className="navigation">
-                <button className="navigation__hambuger-button" type="button" onClick={hambugerClickHandler}>
+                <button
+                    className="navigation__hambuger-button"
+                    type="button"
+                    onClick={hambugerClickHandler}
+                    aria-label="hamburger menu"
+                >
                     <i className="icofont-navigation" />
                 </button>
                 <TextLink className="navigation__logo" href="/">

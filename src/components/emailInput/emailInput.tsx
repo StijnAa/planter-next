@@ -13,7 +13,7 @@ const EmailInput: FC = () => {
         const emailValidation = emailSchema.safeParse(email);
 
         if (!emailValidation.success) {
-            alert("Vul een geldig email adres in");
+            alert("Vul een geldig e-mailadres in");
             setLoading(false);
             return;
         }
