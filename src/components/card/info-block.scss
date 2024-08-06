@@ -105,3 +105,19 @@
 .info-block__button-container {
     margin-top: 2rem;
 }
+
+.privacy-policy {
+    p{
+        margin-bottom: 1rem;
+    }
+    ul {
+        li {
+            margin-left: 2rem;
+            list-style: circle;
+            margin-bottom: 5px;
+        }
+    }
+    h5{
+        margin-bottom: 1rem;
+    }
+}

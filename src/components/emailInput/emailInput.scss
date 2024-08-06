@@ -10,16 +10,27 @@
   border-style: solid;
   border-color: transparent;
   font-size: 0.8rem;
+  height: 61px;
+
   &::placeholder {
     color: #252525;
   }
   &:focus {
     border-color: $main;
   }
+
 }
 
 .email-input__container {
   margin-top: 1.5rem;
   display: flex;
   gap: 10px;
+  @media only screen and (max-width: $small) {
+      flex-wrap: wrap;
+      button{
+      display: block;
+      width: 100%;
+
+  }
+  }
 }

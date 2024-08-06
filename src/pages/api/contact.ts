@@ -35,8 +35,8 @@ export const ContactApi = async (req: NextApiRequest, res: NextApiResponse) => {
         to: req.body.email,
         subject: "Bevestiging Planter.nl",
         html: `
-    <p>We hebben je aanvraag ontvangen! We gaan er zo snel mogelijk mee aan de slag.</p>
-    <p>Groetjes Tjerk van Planter.nl</p>`,
+    <p>We hebben uq aanvraag ontvangen en gaan er zo snel mogelijk mee aan de slag.</p>
+    <p>Vriendelijke groet, Tjerk van Planter.nl</p>`,
     };
 
     await new Promise((resolve, reject) => {

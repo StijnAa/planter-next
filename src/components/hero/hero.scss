@@ -35,7 +35,6 @@
 
 .hero__title {
   color: $white;
-
   &--center {
     text-align: center;
   }
@@ -43,3 +42,12 @@
     text-align: left;
   }
 }
+
+.hero:has(img){
+    .hero__title{
+  text-shadow: 0px 0px 17px rgba(0,0,0,0.55);
+
+    }
+}
+
+

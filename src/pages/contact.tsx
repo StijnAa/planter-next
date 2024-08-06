@@ -17,8 +17,8 @@ export default function Home() {
             </header>
 
             <main>
-                <InfoBlock title="Contact" image="/img/demoImg1.jpg" alt="zonnige tuin" imagePosition="right" card>
-                    <p>Laat je email adres achter, dan nemen wij contact met je op.</p>
+                <InfoBlock title="Contact" image="/img/CAS05009.jpg" alt="zonnige tuin" imagePosition="right" card>
+                    <p>Laat uw e-mailadres achter en wij nemen spoedig contact met u op.</p>
                     <EmailInput />
                 </InfoBlock>
             </main>

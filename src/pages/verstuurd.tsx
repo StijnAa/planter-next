@@ -15,8 +15,8 @@ export default function Home() {
             </header>
 
             <main>
-                <InfoBlock title="Gelukt!" image="/img/demoImg1.jpg" alt="zonnige tuin" imagePosition="right" card>
-                    <p>We nemen binnenkort contact met je op!</p>
+                <InfoBlock title="Gelukt!" image="/img/CAS05041.jpg" alt="zonnige tuin" imagePosition="right" card>
+                    <p>We nemen binnenkort contact met u op!</p>
                 </InfoBlock>
             </main>
             <Footer />

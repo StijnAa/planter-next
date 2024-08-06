@@ -6,10 +6,6 @@ export default function Document() {
         <React.StrictMode>
             <Html lang="en">
                 <Head>
-                    <meta
-                        name="viewport"
-                        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
-                    />
                     <link href="/icofont/icofont.min.css" rel="stylesheet" />
                     <link href="/icofont/fonts/icofont.woff2" rel="stylesheet" />
                     <link
