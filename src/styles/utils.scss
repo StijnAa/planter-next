@@ -1,0 +1,50 @@
+@use "sass:meta";
+@use "sass:math";
+@use "sass:string";
+@use "tools.generic-helpers" as fn;
+
+@function responsiveClamp($minSize, $maxSize, $start, $end, $unit: vw) {
+    $slope: math.div($maxSize - $minSize, $end - $start);
+    $slopeToUnit: fn.decimalRound($slope * 100, 3);
+    $interceptRem: fn.decimalRound(fn.pxToRem($minSize - $slope * $start), 3);
+    $minSizeRounded: fn.decimalRound($minSize, 3);
+    $maxSizeRounded: fn.decimalRound($maxSize, 3);
+    $preferredValue: if(
+        $interceptRem < 0,
+        #{$slopeToUnit}#{$unit} " - " #{math.abs($interceptRem)},
+        #{$slopeToUnit}#{$unit} " + " #{$interceptRem}
+    );
+    @return clamp(#{$minSizeRounded}, #{$preferredValue}, #{$maxSizeRounded});
+}
+
+/// Adjust line height based on the perception that bigger font sizes
+/// need less line height to achieve the same visual effect
+// @function calculateLineHeight($fontSize: null, $bodyTextLineHeight: false, $outputInPx: false, $responsive: false) {
+//     // $lineHeightStartingPoint: if($bodyTextLineHeight, base.$bodyTextBaseLineHeight, base.$headingsBaseLineHeight);
+//     $adjustmentFactor: 1.8;
+
+//     @if $fontSize == null and $responsive == false {
+//         @error "You cannot use this mixin without specifying either a $fontSize argument or setting $responsive to true.";
+//     } @else if $responsive {
+//         @return calc((#{$lineHeightStartingPoint} * 1em) - ((1em - 1rem) / #{$adjustmentFactor}));
+//     } @else if $fontSize != null {
+//         $lineHeightInPx: ($lineHeightStartingPoint * $fontSize) -
+//             math.div(($fontSize - base.$baseFontSize), $adjustmentFactor);
+
+//         @if ($outputInPx) {
+//             @return fn.decimalRound($lineHeightInPx, 3);
+//         }
+//         @return fn.decimalRound(math.div($lineHeightInPx, $fontSize), 3);
+//     }
+//     @error "These are not accepted arguments for the calculateLineHeight function.";
+// }
+
+@mixin typography($min, $max, $start, $end, $bodyTextLineHeight: false) {
+    font-size: #{responsiveClamp(
+            $minSize: $min,
+            $maxSize: $max,
+            $start: $start,
+            $end: $end
+        )};
+    line-height: calc(3px + 2ex + 3px);
+}

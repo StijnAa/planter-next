@@ -65,6 +65,9 @@ const InfoBlock: React.FC<InfoBlockProps> = (props) => {
                         layout="fill"
                         objectFit="cover"
                         sizes="(max-width: 768px) 100vw, 50vw"
+                        objectPosition="bottom"
+                        placeholder="blur"
+                        blurDataURL="/image/blur.jpg"
                     />
                 </aside>
             )}

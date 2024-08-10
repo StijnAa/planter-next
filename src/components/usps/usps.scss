@@ -1,3 +1,5 @@
+@use "./../../styles/utils.scss" as utils;
+
 .usps {
   background-color: $white;
   display: flex;
@@ -19,6 +21,8 @@
   }
   span {
     font-weight: 500;
+    @include utils.typography($min:$font-12,$max:$font-14,$start:$mobile,$end:$desktop);
+
   }
   @media only screen and (max-width: $mobile) {
     flex-direction: column;

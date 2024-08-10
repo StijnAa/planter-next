@@ -1,0 +1,167 @@
+@use "sass:meta";
+@use "sass:math";
+@use "sass:string";
+@use "settings.base" as base;
+
+$oneThird: 33.333333%;
+$twoThirds: 66.666666%;
+$fullWidth: 100%;
+
+// Simple helpers
+
+@function negative($value) {
+    @return $value * -1;
+}
+
+@function half($value) {
+    @return math.div($value, 2);
+}
+
+@function double($value) {
+    @return $value * 2;
+}
+
+// Check if number is integer
+@function isInteger($value) {
+    @if meta.type-of($value) !=number {
+        @warn '`#{$value}` is not a valid number!';
+        @return null;
+    } @else {
+        @if round($value) == $value {
+            @return true;
+        } @else {
+            @return false;
+        }
+    }
+}
+
+// Check if value is in a list
+@function listIncludes($list, $value) {
+    @if (index($list, $value)) != null {
+        @return true;
+    }
+    @return false;
+}
+
+// Remove the unit of a length
+// https://css-tricks.com/snippets/sass/strip-unit-function/
+@function stripUnit($number) {
+    @if meta.type-of($number) == "number" and not unitless($number) {
+        @return math.div($number, ($number * 0 + 1));
+    }
+
+    @return $number;
+}
+
+// Inspired by https://github.com/carbon-design-system/carbon/tree/0049b31dfdfb54774eb49ab17f0df1b900cfa963/packages/layout
+
+/// Convert a given px unit to a rem unit
+@function pxToRem($px) {
+    @if unit($px) != "px" {
+        @error "Expected argument $px to be of type `px`, instead received: `#{unit($px)}`";
+    }
+
+    @return math.div($px, base.$baseFontSize) * 1rem;
+}
+
+/// Convert a given px unit to a em unit
+@function pxToEm($px) {
+    @if unit($px) != "px" {
+        @error "Expected argument $px to be of type `px`, instead received: `#{unit($px)}`";
+    }
+
+    @return math.div($px, base.$baseFontSize) * 1em;
+}
+
+// Converts a given px unit to a vw unit
+@function pxToVw($target, $viewport, $decimals: 9) {
+    $vwContext: (stripUnit($viewport) * 0.01) * 1px;
+    @return decimalRound(math.div($target, $vwContext) * 1vw, $decimals);
+}
+
+@mixin squareSize($size) {
+    width: $size;
+    height: $size;
+}
+
+@mixin rtl {
+    [dir="rtl"] & {
+        @content;
+    }
+}
+
+// Borrowed from https://stackoverflow.com/questions/10369643/rounding-numbers-in-sass-and-adjusting-the-amount-of-decimals
+
+@function decimalRound($number, $digits: 0, $mode: round) {
+    $n: 1;
+    // $number must be a number
+    @if meta.type-of($number) != number {
+        @warn '#{ $number } is not a number.';
+        @return $number;
+    }
+    // $digits must be a unitless number
+    @if meta.type-of($digits) != number {
+        @warn '#{ $digits } is not a number.';
+        @return $number;
+    } @else if not unitless($digits) {
+        @warn '#{ $digits } has a unit.';
+        @return $number;
+    }
+    @if $digits > 0 {
+        @for $i from 1 through $digits {
+            $n: $n * 10;
+        }
+    }
+    @if $mode == round {
+        @return math.div(round($number * $n), $n);
+    } @else if $mode == ceil {
+        @return math.div(ceil($number * $n), $n);
+    } @else if $mode == floor {
+        @return math.div(floor($number * $n), $n);
+    } @else {
+        @warn '#{ $mode } is undefined keyword.';
+        @return $number;
+    }
+}
+
+// Returns true when `$value` is contained in `$list`
+@function contains($list, $value) {
+    @return not not index($list, $value);
+}
+
+// Returns true when `$value` is NOT contained in `$list`
+@function doesNotContain($list, $value) {
+    @return not index($list, $value);
+}
+
+@function camelToKebabCase($string) {
+    $numbers: "0", "1", "2", "3", "4", "5", "6", "7", "8", "9";
+    $length: string.length($string);
+    $newString: "";
+    @for $i from 1 through string.length($string) {
+        $char: string.slice($string, $i, $i);
+        $previousChar: string.slice($string, $i - 1, $i - 1);
+        @if $char !=
+            string.to-lower-case($char) or
+            (contains($numbers, $char) and doesNotContain($numbers, $previousChar))
+        {
+            $lowerCasedChar: string.to-lower-case($char);
+            $newString: $newString + "-" + $lowerCasedChar;
+        } @else {
+            $newString: $newString + $char;
+        }
+    }
+    @return $newString;
+}
+
+@function mergeLists($lists...) {
+    $result: ();
+
+    @each $list in $lists {
+        @each $item in $list {
+            $result: append($result, $item, comma);
+        }
+    }
+
+    @return $result;
+}
