@@ -1,3 +1,5 @@
+@use "./../../styles/utils.scss" as utils;
+
 .email-input__input {
   border: none;
   outline: none;
@@ -9,7 +11,7 @@
   border-width: 1px;
   border-style: solid;
   border-color: transparent;
-  font-size: 0.8rem;
+@include utils.typography($min:$font-12,$max:$font-14,$start:$mobile,$end:$desktop);
   height: 61px;
 
   &::placeholder {
@@ -25,7 +27,8 @@
   margin-top: 1.5rem;
   display: flex;
   gap: 10px;
-  @media only screen and (max-width: $small) {
+
+  @media only screen and (max-width: $desktop) {
       flex-wrap: wrap;
       button{
       display: block;

@@ -21,7 +21,7 @@ export default function Home() {
 
             <main>
                 <Hero
-                    title="Jouw tuin, jouw stijl"
+                    title="Uw tuin, uw stijl"
                     buttonText="Over Planter"
                     href="/over-planter"
                     textPosition="left"
@@ -34,6 +34,8 @@ export default function Home() {
                             objectPosition="bottom"
                             loading="eager"
                             sizes="100vw"
+                            placeholder="blur"
+                            blurDataURL="/image/blur.jpg"
                         />
                     }
                 />
@@ -74,23 +76,23 @@ export default function Home() {
                     title="Veelgestelde Vragen:"
                     faqItems={[
                         {
-                            question: "Wat Maakt Jullie Plantenbakken Uniek?",
+                            question: "Wat maakt jullie plantenbakken uniek?",
                             answer: "Onze plantenbakken zijn op maat gemaakt, met handgeselecteerd duurzaam hout en ontworpen voor zowel functionaliteit als schoonheid.",
                         },
                         {
-                            question: "Kan Ik Ook Een Plantenbak Laten Maken Voor Mijn Balkon?",
+                            question: "kan ik ook een plantenbak laten maken voor mijn balkon?",
                             answer: "Zeker! Wij specialiseren in op maat gemaakte oplossingen voor elke ruimte.",
                         },
                         {
-                            question: "Hoe Kies Ik de Juiste Maat Plantenbak?",
+                            question: "Hoe kies ik de juiste maat plantenbak?",
                             answer: "Ons team adviseert u graag op basis van de afmetingen van uw ruimte en uw specifieke wensen. Neem contact met ons op om uw ruimte te bespreken.",
                         },
                         {
-                            question: "Zijn de Plantenbakken Weer- en Winterbestendig?",
+                            question: "Zijn de plantenbakken weer- en winterbestendig?",
                             answer: "Absoluut, onze plantenbakken zijn behandeld om alle weersomstandigheden te doorstaan, inclusief strenge winters.",
                         },
                         {
-                            question: "Kan Ik Een Specifiek Ontwerp Aanvragen?",
+                            question: "Kan ik een specifiek ontwerp aanvragen?",
                             answer: "Ja, wij bieden volledige maatwerkopties. Deel uw ontwerpwensen met ons, en wij gaan aan de slag om uw ideale plantenbak te realiseren.",
                         },
                     ]}

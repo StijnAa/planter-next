@@ -9,13 +9,27 @@ $defaultColoredFill: "";
 
 $mobile: 600px;
 $tablet: 768px;
-$small: 1224px;
+$desktop: 1224px;
 
 $padding-mobile: 20px;
 $padding-tablet: 30px;
 $padding-small: 50px;
 $padding-desktop: 180px;
 
+$font-12: 12.642px;
+$font-14: 14.222px;
+$font-16: 16px;
+$font-18: 18px;
+$font-20: 20.25px;
+$font-22: 22.781px;
+$font-25: 25.629px;
+$font-28: 28.833px;
+$font-32: 32.437px;
+$font-36: 36.491px;
+$font-41: 41.053px;
+$font-46: 46.184px;
+
+@import "./utils.scss";
 @import "./reset.scss";
 @import "./global.scss";
 @import "./components.scss";
